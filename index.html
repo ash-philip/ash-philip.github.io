@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashwin Philip | Data & Business Intelligence Analyst</title>
+<meta name="description" content="Ashwin Philip. Business Intelligence and Data Analyst. Breaking down complex data, building intelligent strategy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#131317;
+    --card-bg:#1c1c21;
+    --text-main:#E8EAED;
+    --text-muted:#a1a1aa;
+    --line:#2d2d35;
+    --accent-primary:#8b5cf6;
+    --accent-hover:#7c3aed;
+    --accent-alt:#b18cff;
+    --white:#FFFFFF;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text-main);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent-primary);color:var(--white)}
+
+  /* nav */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(19, 19, 23, .85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;justify-content:space-between;align-items:center;height:64px}
+  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;letter-spacing:-.01em}
+  .brand span{color:var(--accent-primary)}
+  .nav-links{display:flex;gap:30px;font-size:.9rem;font-weight:500}
+  .nav-links a{color:var(--text-muted);transition:color .2s}
+  .nav-links a:hover{color:var(--accent-primary)}
+  @media(max-width:640px){.nav-links{display:none}}
+
+  /* hero */
+  .hero{padding:110px 0 90px;position:relative;overflow:hidden}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:.78rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--accent-alt);
+    margin-bottom:26px;
+  }
+  .hero h1{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.05;
+    letter-spacing:-.02em;max-width:15ch;
+  }
+  .hero h1 .brk{color:var(--text-main)}
+  .hero h1 .bld{color:var(--accent-primary);font-style:italic}
+  .hero-sub{
+    margin-top:30px;font-size:1.18rem;color:var(--text-muted);
+    max-width:46ch;
+  }
+  .hero-cta{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-weight:500;font-size:.95rem;padding:13px 22px;border-radius:4px;
+    transition:transform .15s,box-shadow .15s,background .2s,border-color .2s;
+  }
+  .btn-primary{background:var(--accent-primary);color:var(--white)}
+  .btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--line);color:var(--text-main);background:var(--card-bg)}
+  .btn-ghost:hover{border-color:var(--accent-primary);color:var(--accent-primary);transform:translateY(-2px)}
+
+  /* section scaffold */
+  section{padding:88px 0}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:48px}
+  .sec-num{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--accent-alt);letter-spacing:.1em}
+  .sec-title{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.8rem,3.5vw,2.5rem);letter-spacing:-.015em}
+  .divider{height:1px;background:var(--line)}
+
+  /* about */
+  .about-layout{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:start}
+ .headshot {
+    width: 100%;
+    aspect-ratio: 3 / 4; 
+    border-radius: 8px;
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    position: sticky;
+    top: 96px;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); 
+  }
+  
+  .headshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center 20%; 
+    display: block;
+  }
+  
+  .headshot .placeholder{
+    width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+    font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--text-muted);
+    text-align:center;padding:16px;line-height:1.6;letter-spacing:.02em;
+  }
+  .about-grid{display:grid;grid-template-columns:1fr;gap:22px;max-width:64ch}
+  .about-grid p{font-size:1.1rem;color:var(--text-muted)}
+  .about-grid p strong{color:var(--text-main);font-weight:600}
+  .pull{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+    font-size:clamp(1.3rem,2.6vw,1.7rem);line-height:1.35;
+    color:var(--text-main);border-left:3px solid var(--accent-primary);
+    padding-left:22px;margin:8px 0;
+  }
+  @media(max-width:720px){
+    .about-layout{grid-template-columns:1fr;gap:28px}
+    .headshot{width:140px;height:140px;position:static}
+  }
+
+  /* projects */
+  .proj{
+    display:grid;grid-template-columns:auto 1fr;gap:34px;
+    padding:40px 0;border-top:1px solid var(--line);
+    align-items:start;
+  }
+  .proj:last-child{border-bottom:1px solid var(--line)}
+  .proj-index{font-family:'JetBrains Mono',monospace;font-size:.95rem;color:var(--accent-alt);padding-top:6px}
+  .proj-body h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;letter-spacing:-.01em;margin-bottom:6px}
+  .proj-tag{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-primary);margin-bottom:16px;font-weight:500}
+  .proj-body p{color:var(--text-muted);max-width:60ch;margin-bottom:18px}
+  .proj-body p .hl{color:var(--text-main);font-weight:500}
+  .stack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+  .chip{
+    font-family:'JetBrains Mono',monospace;font-size:.74rem;
+    background:var(--card-bg);border:1px solid var(--line);
+    padding:4px 10px;border-radius:4px;color:var(--text-muted);
+  }
+  .proj-links{display:flex;gap:20px;font-size:.9rem;font-weight:500}
+  .proj-links a{color:var(--accent-primary);display:inline-flex;align-items:center;gap:6px;transition:gap .15s}
+  .proj-links a:hover{gap:10px}
+  .proj-links a.muted{color:var(--text-muted)}
+  .proj-links a.muted:hover{color:var(--text-main)}
+  .star{display:inline-block;font-size:.7rem;color:var(--accent-primary);vertical-align:middle;margin-left:8px;font-family:'JetBrains Mono',monospace;letter-spacing:.1em}
+  @media(max-width:640px){
+    .proj{grid-template-columns:1fr;gap:12px}
+    .proj-index{padding-top:0}
+  }
+
+ /* beyond */
+  .beyond {
+    background: radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.12) 0%, var(--card-bg) 60%);
+    color: var(--text-main);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 56px 48px;
+    margin-top: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+  }
+  
+  /* Adds a subtle violet accent line to the top of the card */
+  .beyond::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--accent-primary), transparent);
+  }
+  
+  .beyond .sec-title { color: var(--white); }
+  .beyond .sec-num { color: var(--accent-primary); }
+  
+  .beyond p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 62ch;
+    line-height: 1.7;
+  }
+  
+  /* Highlights the bolded text in crisp white */
+  .beyond p strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+  
+  /* Turns the sign-off into a styled badge */
+  .beyond .coyg {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 6px 12px;
+    background: rgba(239, 1, 7, 0.1);
+    color: #EF0107;
+    border: 1px solid rgba(239, 1, 7, 0.25);
+    border-radius: 4px;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+  }
+  
+  @media(max-width:640px){.beyond{padding:40px 26px}}
+  /* contact */
+  .contact{text-align:center;padding:96px 0 40px}
+  .contact h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.02em;margin-bottom:18px}
+  .contact p{color:var(--text-muted);font-size:1.1rem;max-width:44ch;margin:0 auto 34px}
+  .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  footer{border-top:1px solid var(--line);padding:28px 0;text-align:center}
+  footer p{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--text-muted);letter-spacing:.04em}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <div class="brand">Ashwin Philip<span>.</span></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#beyond">Beyond</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Business Intelligence &amp; Data Analyst</div>
+    <h1><span class="brk">Breaking down complex data.</span> <span class="bld">Building intelligent strategy.</span></h1>
+    <p class="hero-sub">I approach data the way an engineer approaches a system: take it apart, understand how it works, and rebuild it into something people can act on.</p>
+    <div class="hero-cta">
+      <a href="#work" class="btn btn-primary">View my work &rarr;</a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title">About</h2>
+    </div>
+    <div class="about-layout">
+      <div class="headshot">
+        <!-- Replace this placeholder div with: <img src="headshot.jpg" alt="Ashwin Philip"> -->
+           <img src="IMG_2525.JPG" alt="Ashwin Philip">
+      </div>
+      <div class="about-grid">
+        <p>Hi, I am Ashwin. I am a <strong>Business Intelligence and Data Analyst</strong> with a background in telecommunications engineering and a Master of Science in Business Analytics from the University of Washington.</p>
+        <p>My engineering background taught me to break down complex systems and understand how things operate. I approach data analysis the exact same way. My focus is entirely on finding the ground truth and translating a complicated web of information into clear, actionable business strategy.</p>
+        <p class="pull">At the end of every data point is a human behavior.</p>
+        <p>My perspective is heavily shaped by the places I have lived. I grew up in Dubai and later spent time in Sydney, where I briefly worked as a gelato maker (shoutout to Rivareno). Experiencing such vibrant, international hubs gave me a deep appreciation for different cultures, global perspectives, and the way people connect. This inherent curiosity about people makes me a better analyst.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title">Selected work</h2>
+    </div>
+
+    <div class="proj">
+      <div class="proj-index">01</div>
+      <div class="proj-body">
+        <h3>TaskFlow Growth Analytics <span class="star">◆ FEATURED</span></h3>
+        <div class="proj-tag">Experimentation &middot; Causal Inference &middot; ML</div>
+        <p>An end-to-end growth analytics case study on a simulated B2B SaaS company. It covers the full path a real growth team works through: <span class="hl">funnel and retention analysis, A/B testing, causal inference, churn modeling, and customer lifetime estimation</span>. Because the data is synthetic, the true answer behind every number is known, so the project shows whether standard methods actually recover the truth or get fooled by it.</p>
+        <div class="stack">
+          <span class="chip">Python</span><span class="chip">BigQuery</span><span class="chip">dbt</span>
+          <span class="chip">statsmodels</span><span class="chip">lifelines</span><span class="chip">Streamlit</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://taskflow-growth-analytics.streamlit.app">Live app &rarr;</a>
+          <a class="muted" href="https://github.com/ash-philip/taskflow-growth-analytics">GitHub &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+<div class="proj">
+      <div class="proj-index">02</div>
+      <div class="proj-body">
+        <h3>Transit &amp; Rideshare Analysis</h3>
+        <div class="proj-tag">Time-Series Forecasting &middot; Data Engineering &middot; BI</div>
+        <p>An applied consulting project for Pierce Transit focused on ridership and revenue modeling. I engineered an end-to-end data pipeline, trained <span class="hl">SARIMAX time-series models</span> to forecast fare trends, and deployed an interactive <span class="hl">Streamlit application</span>. The final product serves as a decision-support tool, allowing stakeholders to simulate the financial impact of various fare-change scenarios.</p>
+        <div class="stack">
+          <span class="chip">Python</span><span class="chip">Azure SQL</span><span class="chip">statsmodels</span><span class="chip">Streamlit</span>
+        </div>
+        <div class="proj-links">
+          <a class="muted" href="https://github.com/ash-philip/Transit-Rideshare-Analysis">GitHub &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+  <div class="proj">
+      <div class="proj-index">03</div>
+      <div class="proj-body">
+        <h3>E-Commerce Database Analytics</h3>
+        <div class="proj-tag">SQL &middot; Data Modeling &middot; Business Analysis</div>
+        <p>An end-to-end relational database project transforming raw e-commerce records into a structured cloud data warehouse. I designed the schema in Azure SQL and performed deep exploratory analysis using Python and pandas. The project focuses on deriving strategic BI metrics, including <span class="hl">RFM customer segmentation, cohort retention modeling, and customer lifetime value</span> calculations.</p>
+        <div class="stack">
+          <span class="chip">SQL</span><span class="chip">Azure SQL</span><span class="chip">Python</span><span class="chip">pandas</span>
+        </div>
+        <div class="proj-links">
+          <a class="muted" href="https://github.com/ash-philip/Ecommerce-database-analytics">GitHub &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="beyond" style="padding-top:20px">
+  <div class="wrap">
+    <div class="beyond">
+      <div class="sec-head">
+        <span class="sec-num">03</span>
+        <h2 class="sec-title">Beyond the data</h2>
+      </div>
+      <p>These days, I call the PNW home. When I am away from my desk, I am usually exploring Seattle's local cafes, hunting for the best fish and chips to compare against Sydney's, or watching Arsenal test my emotional resilience.</p>
+      <div class="coyg">COYG.</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Let's talk.</h2>
+    <p>Open to data, analytics, and business intelligence roles. If you have a problem worth digging into, I would love to hear about it.</p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:ashwin.abraham.p@gmail.com">Email me</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/ashwinabrahamphilip">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/ash-philip">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><p>Designed &amp; built by Ashwin Philip &middot; Seattle, WA</p></div>
+</footer>
+
+</body>
+</html>
