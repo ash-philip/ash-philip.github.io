@@ -1,374 +1,1089 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ashwin Philip | Data & Business Intelligence Analyst</title>
-<meta name="description" content="Ashwin Philip. Business Intelligence and Data Analyst. Breaking down complex data, building intelligent strategy.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashwin Philip · Data Analyst</title>
+<meta property="og:title" content="Ashwin Philip · Data Analyst">
+<meta property="og:description" content="Breaking down complex data. Building intelligent strategy.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230071e3'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='28' fill='white' text-anchor='middle'%3EAP%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Breaking down complex data. Building intelligent strategy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#131317;
-    --card-bg:#1c1c21;
-    --text-main:#E8EAED;
-    --text-muted:#a1a1aa;
-    --line:#2d2d35;
-    --accent-primary:#8b5cf6;
-    --accent-hover:#7c3aed;
-    --accent-alt:#b18cff;
-    --white:#FFFFFF;
-    --maxw:1080px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);
-    color:var(--text-main);
-    font-family:'Inter',system-ui,sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-  a{color:inherit;text-decoration:none}
-  ::selection{background:var(--accent-primary);color:var(--white)}
+:root{
+  --bg:#ffffff; --tile:#f5f5f7; --tile2:#e8e8ed; --ink:#1d1d1f; --ink2:#6e6e73; --ink3:#737378; --line:#d2d2d7;
+  --accent:#0071e3; --live:#34c759; --warn:#ff9f0a; --bad:#ff375f; --muted:#c7c7cc; --purple:#af52de;
+  --sans:Inter,-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,monospace;
+  --serif:Newsreader,"New York",Georgia,serif;
+  --radius:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+#work,#about,#contact{scroll-margin-top:72px}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.read{max-width:680px;margin:0 auto}
+svg text{font-family:var(--sans)}
 
-  /* nav */
-  nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(19, 19, 23, .85);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{display:flex;justify-content:space-between;align-items:center;height:64px}
-  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;letter-spacing:-.01em}
-  .brand span{color:var(--accent-primary)}
-  .nav-links{display:flex;gap:30px;font-size:.9rem;font-weight:500}
-  .nav-links a{color:var(--text-muted);transition:color .2s}
-  .nav-links a:hover{color:var(--accent-primary)}
-  @media(max-width:640px){.nav-links{display:none}}
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.06)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:52px}
+.brand{font-weight:600;font-size:15px;letter-spacing:-.01em}
+.navlinks{display:flex;gap:28px;align-items:center;font-size:13px;color:var(--ink2)}
+.navlinks a:hover{color:var(--ink)}
+.menu-btn{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;margin-right:-8px;border:0;background:none;cursor:pointer;padding:0 9px}
+.menu-btn span{display:block;height:2px;border-radius:2px;background:var(--ink);transition:transform .3s,opacity .2s}
+nav.open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+nav.open .menu-btn span:nth-child(2){opacity:0}
+nav.open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:820px){
+  nav.open .navlinks{display:flex;position:absolute;top:52px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.08);padding:8px 24px 18px;animation:drop .25s ease}
+  nav.open .navlinks a{font-size:22px;font-weight:600;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--tile2);letter-spacing:-.02em}
+  nav.open .navlinks a:last-child{border-bottom:0}
+}
+@keyframes drop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.pill{display:inline-flex;align-items:center;gap:6px;border-radius:980px;padding:8px 16px;font-size:14px;font-weight:500;transition:background .2s}
+.pill.primary{background:var(--accent);color:#fff}
+.pill.primary:hover{background:#0077ed}
+.pill.ghost{color:var(--accent)}
+.pill.ghost:hover{text-decoration:underline}
+.pill.sm{padding:6px 14px;font-size:12px}
 
-  /* hero */
-  .hero{padding:110px 0 90px;position:relative;overflow:hidden}
-  .eyebrow{
-    font-family:'JetBrains Mono',monospace;font-size:.78rem;
-    letter-spacing:.16em;text-transform:uppercase;color:var(--accent-alt);
-    margin-bottom:26px;
-  }
-  .hero h1{
-    font-family:'Fraunces',serif;font-weight:500;
-    font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.05;
-    letter-spacing:-.02em;max-width:15ch;
-  }
-  .hero h1 .brk{color:var(--text-main)}
-  .hero h1 .bld{color:var(--accent-primary);font-style:italic}
-  .hero-sub{
-    margin-top:30px;font-size:1.18rem;color:var(--text-muted);
-    max-width:46ch;
-  }
-  .hero-cta{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap}
-  .btn{
-    display:inline-flex;align-items:center;gap:9px;
-    font-weight:500;font-size:.95rem;padding:13px 22px;border-radius:4px;
-    transition:transform .15s,box-shadow .15s,background .2s,border-color .2s;
-  }
-  .btn-primary{background:var(--accent-primary);color:var(--white)}
-  .btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px)}
-  .btn-ghost{border:1px solid var(--line);color:var(--text-main);background:var(--card-bg)}
-  .btn-ghost:hover{border-color:var(--accent-primary);color:var(--accent-primary);transform:translateY(-2px)}
+/* hero */
+.hero{text-align:center;padding:120px 0 72px}
+.eyebrow{font-size:14px;font-weight:600;color:var(--ink2);margin-bottom:16px}
+.hero h1{font-size:clamp(44px,7.5vw,88px);line-height:1.02;letter-spacing:-.045em;font-weight:700;max-width:900px;margin:0 auto}
+.hero h1 .grad{background:linear-gradient(90deg,#0a3d91,#0071e3 25%,#00a3b4 55%,#3fbf5f 88%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-size:clamp(18px,2.2vw,22px);color:var(--ink2);max-width:620px;margin:24px auto 36px;letter-spacing:-.01em}
+.ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.ctas .pill{padding:12px 22px;font-size:16px}
+.hero h1{font-size:clamp(36px,5.3vw,66px);max-width:none}
+.hero h1 .ln{display:block}
+.hero h1 .grad{padding-bottom:.14em;margin-bottom:-.14em}
+button.pill{border:0;background:none;font:inherit;font-size:16px;font-weight:500;cursor:pointer}
+.cred{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:64px;background:var(--tile);border-radius:980px;padding:6px}
+.credi{font-size:14px;color:var(--ink2);padding:8px 18px;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.credi+.credi{border-left:1px solid var(--line)}
+.credi:first-child{color:#1f8a3c;font-weight:500}
+.credi .dot{width:7px;height:7px;border-radius:50%;background:var(--live);animation:pulse 2s ease-in-out infinite}
+.mono-row{font-family:var(--mono);font-size:12.5px;color:var(--ink)}
+.scrollcue{display:block;width:26px;height:42px;border:2px solid var(--line);border-radius:14px;margin:56px auto 0;position:relative}
+.scrollcue span{position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--ink3);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
 
-  /* section scaffold */
-  section{padding:88px 0}
-  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:48px}
-  .sec-num{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--accent-alt);letter-spacing:.1em}
-  .sec-title{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.8rem,3.5vw,2.5rem);letter-spacing:-.015em}
-  .divider{height:1px;background:var(--line)}
+/* ask panel */
+.ask-bg{position:fixed;inset:0;background:rgba(0,0,0,.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:50;opacity:0;pointer-events:none;transition:opacity .3s}
+.ask-bg.on{opacity:1;pointer-events:auto}
+.ask{position:fixed;z-index:51;left:50%;top:50%;width:min(520px,calc(100% - 32px));max-height:calc(100% - 48px);overflow:auto;background:#fff;border-radius:24px;padding:32px;box-shadow:0 40px 100px -30px rgba(0,0,0,.4);transform:translate(-50%,-46%) scale(.97);opacity:0;pointer-events:none;transition:all .35s cubic-bezier(.2,.8,.2,1)}
+.ask.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+.ask h3{font-size:24px;letter-spacing:-.025em;margin-bottom:20px}
+.ask .lede{font-size:14px;color:var(--ink2);margin-bottom:20px}
+.ask .x{position:absolute;top:18px;right:18px;width:32px;height:32px;border-radius:50%;border:0;background:var(--tile);cursor:pointer;font-size:16px;color:var(--ink2)}
+.qa{background:var(--tile);border-radius:16px;margin-bottom:10px;overflow:hidden}
+.qa summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:600;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";font-weight:400;font-size:20px;color:var(--ink3);transition:transform .25s}
+.qa[open] summary::after{transform:rotate(45deg)}
+.qa p{padding:0 18px 18px;font-size:15px;color:var(--ink2)}
+.own{margin-top:22px;padding-top:20px;border-top:1px solid var(--tile2)}
+.own .code{display:block;margin-bottom:12px}
+.own input,.own textarea{width:100%;font:inherit;font-size:15px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;background:#fff;color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s}
+.own input:focus,.own textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(0,113,227,.12)}
+.own textarea{min-height:96px;resize:vertical}
+.own .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.own button[type=submit]{width:100%;border:0;cursor:pointer;justify-content:center;padding:12px;font-size:15px}
+.own .hp{position:absolute;left:-9999px}
+.own .msg{font-size:14px;margin-top:10px;text-align:center;color:var(--ink2);min-height:20px}
+.own.sent form{display:none}
+.own .done{display:none;text-align:center;padding:16px 0}
+.own.sent .done{display:block}
+.own .done b{display:block;font-size:19px;margin-bottom:4px}
+@media (max-width:820px){
+  .cred{border-radius:20px;flex-direction:column;padding:8px 4px}
+  .credi+.credi{border-left:0;border-top:1px solid var(--line)}
+  .credi{white-space:normal;justify-content:center;text-align:center}
+  .hero h1 .ln{display:inline}
+  .ask{top:auto;bottom:0;left:0;width:100%;border-radius:24px 24px 0 0;transform:translateY(30px);max-height:88%}
+  .ask.on{transform:none}
+  .own .row2{grid-template-columns:1fr}
+}
 
-  /* about */
-  .about-layout{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:start}
- .headshot {
-    width: 100%;
-    aspect-ratio: 3 / 4; 
-    border-radius: 8px;
-    background: var(--card-bg);
-    border: 1px solid var(--line);
-    overflow: hidden;
-    position: sticky;
-    top: 96px;
-    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); 
-  }
-  
-  .headshot img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    object-position: center 20%; 
-    display: block;
-  }
-  
-  .headshot .placeholder{
-    width:100%;height:100%;display:flex;align-items:center;justify-content:center;
-    font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--text-muted);
-    text-align:center;padding:16px;line-height:1.6;letter-spacing:.02em;
-  }
-  .about-grid{display:grid;grid-template-columns:1fr;gap:22px;max-width:64ch}
-  .about-grid p{font-size:1.1rem;color:var(--text-muted)}
-  .about-grid p strong{color:var(--text-main);font-weight:600}
-  .pull{
-    font-family:'Fraunces',serif;font-style:italic;font-weight:500;
-    font-size:clamp(1.3rem,2.6vw,1.7rem);line-height:1.35;
-    color:var(--text-main);border-left:3px solid var(--accent-primary);
-    padding-left:22px;margin:8px 0;
-  }
-  @media(max-width:720px){
-    .about-layout{grid-template-columns:1fr;gap:28px}
-    .headshot{width:140px;height:140px;position:static}
-  }
+/* catalog */
+.section-head{display:flex;align-items:end;justify-content:space-between;margin:40px 0 28px;gap:16px;flex-wrap:wrap}
+.section-head h2{font-size:clamp(32px,4.5vw,48px);letter-spacing:-.035em;font-weight:700;line-height:1.05}
+.section-head p{color:var(--ink2);font-size:17px;max-width:380px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{background:var(--tile);border-radius:var(--radius);padding:34px 36px 28px;display:flex;flex-direction:column;cursor:pointer;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.card:hover{transform:translateY(-4px);box-shadow:0 24px 60px -24px rgba(0,0,0,.18)}
+.card.wide{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.card .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;gap:12px}
+.code{font-family:var(--mono);font-size:11.5px;color:var(--ink3);letter-spacing:.02em}
+.code b{color:var(--ink2);font-weight:500}
+.status{font-size:11px;font-weight:600;padding:4px 10px;border-radius:980px;background:#fff;color:var(--ink2);display:inline-flex;gap:7px;align-items:center;white-space:nowrap}
+.status.live{color:#1f8a3c}
+.status.live i{width:6px;height:6px;border-radius:50%;background:var(--live);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(52,199,89,.5)}50%{box-shadow:0 0 0 5px rgba(52,199,89,0)}}
+.card h3{font-size:15px;font-weight:600;color:var(--ink2);margin-bottom:8px}
+.card .headline{font-size:clamp(26px,3vw,34px);font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.card.wide .headline{font-size:clamp(30px,3.8vw,44px)}
+.card .big{margin-top:16px;display:flex;align-items:baseline;gap:10px}
+.card .big b{font-size:40px;font-weight:700;letter-spacing:-.04em;white-space:nowrap}
+.card .big span{font-size:14px;color:var(--ink2);max-width:230px;line-height:1.35}
+.viz{flex:1;display:flex;align-items:center;margin:22px 0 18px;min-height:140px}
+.viz svg{width:100%;height:auto;overflow:visible}
+.card.wide .viz{margin:0}
+.spec{font-family:var(--mono);font-size:11.5px;color:var(--ink2);display:grid;grid-template-columns:64px 1fr;gap:5px 12px;padding-top:16px;border-top:1px solid var(--tile2);margin-top:4px}
+.card.wide .spec{margin-top:22px}
+.spec dt{color:var(--ink3)}
+.actions{display:flex;gap:0;margin:14px 0 0 -16px;flex-wrap:wrap}
 
-  /* projects */
-  .proj{
-    display:grid;grid-template-columns:auto 1fr;gap:34px;
-    padding:40px 0;border-top:1px solid var(--line);
-    align-items:start;
-  }
-  .proj:last-child{border-bottom:1px solid var(--line)}
-  .proj-index{font-family:'JetBrains Mono',monospace;font-size:.95rem;color:var(--accent-alt);padding-top:6px}
-  .proj-body h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;letter-spacing:-.01em;margin-bottom:6px}
-  .proj-tag{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-primary);margin-bottom:16px;font-weight:500}
-  .proj-body p{color:var(--text-muted);max-width:60ch;margin-bottom:18px}
-  .proj-body p .hl{color:var(--text-main);font-weight:500}
-  .stack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-  .chip{
-    font-family:'JetBrains Mono',monospace;font-size:.74rem;
-    background:var(--card-bg);border:1px solid var(--line);
-    padding:4px 10px;border-radius:4px;color:var(--text-muted);
-  }
-  .proj-links{display:flex;gap:20px;font-size:.9rem;font-weight:500}
-  .proj-links a{color:var(--accent-primary);display:inline-flex;align-items:center;gap:6px;transition:gap .15s}
-  .proj-links a:hover{gap:10px}
-  .proj-links a.muted{color:var(--text-muted)}
-  .proj-links a.muted:hover{color:var(--text-main)}
-  .star{display:inline-block;font-size:.7rem;color:var(--accent-primary);vertical-align:middle;margin-left:8px;font-family:'JetBrains Mono',monospace;letter-spacing:.1em}
-  @media(max-width:640px){
-    .proj{grid-template-columns:1fr;gap:12px}
-    .proj-index{padding-top:0}
-  }
+.ab{margin:120px 0 0}
+.ab-top{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:center}
+.ab-photo{border-radius:50%;overflow:hidden;background:var(--tile);aspect-ratio:1;box-shadow:0 0 0 8px var(--tile),0 30px 60px -30px rgba(0,0,0,.35)}
+.ab-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.ab-bio{display:flex;flex-direction:column;padding:44px}
+.ab-bio .code{margin-bottom:14px}
+.ab-bio h2{font-size:clamp(28px,3.4vw,40px);letter-spacing:-.03em;line-height:1.08;margin-bottom:18px}
+.ab-bio p{color:var(--ink2);font-size:16.5px;margin-bottom:14px;line-height:1.6}
+.ab-bio p.ab-quote{font-size:21px;font-weight:600;color:var(--ink);letter-spacing:-.015em;line-height:1.35;padding-left:16px;border-left:3px solid var(--accent);margin:6px 0 18px}
+.ab-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:auto;padding-top:22px;border-top:1px solid var(--tile2)}
+.ab-facts dt{font-family:var(--mono);font-size:11px;color:var(--ink3);margin-bottom:3px}
+.ab-facts dd{font-size:14.5px;font-weight:500}
+.ab-head{margin:48px 0 18px}
+.ab-head h3{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.035em}
+.path{padding:40px 36px 36px}
+.pline{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:20px;position:relative}
+.pline::before{content:"";position:absolute;left:8px;right:8px;top:8px;height:2px;background:linear-gradient(90deg,var(--line),var(--line) 80%,#0071e3)}
+.ps{position:relative;padding-top:34px}
+.pdot{position:absolute;top:0;left:0;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--line)}
+.ps.now .pdot{border-color:#0071e3;background:#0071e3;box-shadow:0 0 0 6px rgba(0,113,227,.15);animation:pulse2 2.2s ease-in-out infinite}
+@keyframes pulse2{50%{box-shadow:0 0 0 10px rgba(0,113,227,.05)}}
+.ps .code{display:block;margin-bottom:6px}
+.ps b{display:block;font-size:17px;letter-spacing:-.015em;line-height:1.2;margin-bottom:6px}
+.ps p{font-size:13.5px;color:var(--ink2);line-height:1.45}
+.ps.now b{color:#0071e3}
+@media (max-width:820px){.pline{grid-template-columns:1fr;gap:22px}.pline::before{left:8px;right:auto;top:8px;bottom:8px;width:2px;height:auto;background:linear-gradient(180deg,var(--line),var(--line) 80%,#0071e3)}.ps{padding:0 0 0 36px}}
+.ab-how{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.how{display:flex;flex-direction:column;padding:32px;transition:transform .3s,box-shadow .3s}
+.how:hover{transform:translateY(-3px);box-shadow:0 20px 50px -24px rgba(0,0,0,.18)}
+.hn{font-size:44px;font-weight:700;letter-spacing:-.04em;line-height:1;background:linear-gradient(90deg,#0071e3,#af52de);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:18px;padding-bottom:4px}
+.how h4{font-size:21px;letter-spacing:-.02em;line-height:1.2;margin-bottom:10px}
+.how p{font-size:15px;color:var(--ink2);margin-bottom:22px}
+.how .code{margin-top:auto;color:var(--accent)}
+.how .code b{color:var(--accent)}
+@media (max-width:820px){.ab-top,.ab-how{grid-template-columns:1fr}.ab-photo{width:200px;margin:0 auto}.ab-facts{grid-template-columns:1fr 1fr}.ab-bio{padding:28px}}
+/* about + contact */
+.about{margin:120px 0 0;display:grid;grid-template-columns:1.1fr 1fr;gap:20px}
+.about .tile{background:var(--tile);border-radius:var(--radius);padding:44px}
+.about h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.03em;line-height:1.1;margin-bottom:18px}
+.about p{color:var(--ink2);font-size:17px;margin-bottom:12px}
+.facts{list-style:none;display:grid;gap:18px}
+.facts li{display:flex;gap:14px;align-items:baseline;font-size:16px}
+.facts li b{font-family:var(--mono);font-size:11.5px;color:var(--ink3);font-weight:500;min-width:84px}
+.contact{text-align:center;padding:140px 0 100px}
+.contact h2{font-size:clamp(44px,7vw,80px);letter-spacing:-.045em;line-height:1}
+.contact p{color:var(--ink2);font-size:19px;margin:20px 0 32px}
+footer{border-top:1px solid rgba(0,0,0,.08);padding:22px 0;font-size:12px;color:var(--ink3)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
- /* beyond */
-  .beyond {
-    background: radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.12) 0%, var(--card-bg) 60%);
-    color: var(--text-main);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 56px 48px;
-    margin-top: 8px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
-  }
-  
-  /* Adds a subtle violet accent line to the top of the card */
-  .beyond::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, var(--accent-primary), transparent);
-  }
-  
-  .beyond .sec-title { color: var(--white); }
-  .beyond .sec-num { color: var(--accent-primary); }
-  
-  .beyond p {
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    max-width: 62ch;
-    line-height: 1.7;
-  }
-  
-  /* Highlights the bolded text in crisp white */
-  .beyond p strong {
-    color: var(--white);
-    font-weight: 500;
-  }
-  
-  /* Turns the sign-off into a styled badge */
-  .beyond .coyg {
-    display: inline-block;
-    margin-top: 24px;
-    padding: 6px 12px;
-    background: rgba(239, 1, 7, 0.1);
-    color: #EF0107;
-    border: 1px solid rgba(239, 1, 7, 0.25);
-    border-radius: 4px;
-    font-weight: 700;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
-  }
-  
-  @media(max-width:640px){.beyond{padding:40px 26px}}
-  /* contact */
-  .contact{text-align:center;padding:96px 0 40px}
-  .contact h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.02em;margin-bottom:18px}
-  .contact p{color:var(--text-muted);font-size:1.1rem;max-width:44ch;margin:0 auto 34px}
-  .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+/* ===== case page ===== */
+.page{display:none}.page.on{display:block}
+.back{display:inline-flex;gap:6px;font-size:14px;color:var(--accent);margin:36px 0 0}
+.phero{text-align:center;padding:56px 0 40px}
+.phero .code{display:block;margin-bottom:18px}
+.phero h1{font-weight:700;font-size:clamp(40px,6vw,72px);letter-spacing:-.04em;line-height:1.02;max-width:900px;margin:0 auto}
+.phero .dek{font-size:clamp(18px,2.2vw,22px);color:var(--ink2);max-width:640px;margin:22px auto 0;line-height:1.45}
+.byline{display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:center;font-size:13px;color:var(--ink3);margin-top:26px;padding-top:18px;border-top:1px solid var(--tile2)}
+.byline b{color:var(--ink);font-weight:600}
 
-  footer{border-top:1px solid var(--line);padding:28px 0;text-align:center}
-  footer p{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--text-muted);letter-spacing:.04em}
+.lead{display:grid;grid-template-columns:1.55fr 1fr;gap:20px;margin:24px 0 8px}
+.tile{background:var(--tile);border-radius:var(--radius);padding:36px}
+.ttl{font-size:17px;font-weight:600;letter-spacing:-.01em}
+.tsub{font-size:14px;color:var(--ink2);margin:2px 0 22px}
+.seg{display:inline-flex;background:var(--tile2);border-radius:980px;padding:3px;margin-bottom:24px}
+.seg button{border:0;background:transparent;font:inherit;font-size:13px;font-weight:500;padding:7px 16px;border-radius:980px;cursor:pointer;color:var(--ink2);transition:all .25s}
+.seg button.on{background:#fff;color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.seg-sc{flex-wrap:wrap;border-radius:18px}
+.scgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:4px 0 12px}
+.scn{background:var(--tile);border-radius:18px;padding:18px 20px}
+.scn{position:relative}
+.risk{position:absolute;top:16px;right:18px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#ff375f;background:rgba(255,55,95,.1);padding:4px 10px;border-radius:980px;display:inline-flex;align-items:center;gap:6px;animation:glow 2.2s ease-in-out infinite}
+.risk::before{content:"";width:6px;height:6px;border-radius:50%;background:#ff375f;box-shadow:0 0 8px #ff375f}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(255,55,95,0)}50%{box-shadow:0 0 14px 2px rgba(255,55,95,.35)}}
+.scn .code{display:block;margin-bottom:4px}
+.scn b{display:block;font-size:16px;letter-spacing:-.01em;margin-bottom:12px}
+.sr{display:grid;grid-template-columns:52px 1fr 42px;gap:10px;align-items:center;font-size:12.5px;color:var(--ink2);margin-top:6px}
+.sb{height:8px;background:var(--tile2);border-radius:4px;overflow:hidden}
+.sb i{display:block;height:100%;border-radius:4px}
+.sr em{font-style:normal;font-family:var(--mono);font-size:12px;color:var(--ink);text-align:right}
+.story p.scnote{font-family:var(--sans);font-size:13px;color:var(--ink3);margin-bottom:22px}
+@media (max-width:620px){.scgrid{grid-template-columns:1fr}}
+.rec{background:linear-gradient(135deg,rgba(0,113,227,.08),rgba(175,82,222,.08));border-left:4px solid var(--accent);border-radius:18px;padding:22px 26px;margin:8px 0 22px}
+.rec .code{display:block;color:var(--accent);margin-bottom:8px}
+.story .rec p{font-family:var(--sans);font-size:19px;font-weight:600;line-height:1.45;margin:0;color:var(--ink);letter-spacing:-.01em}
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch;margin:4px 0 26px}
+.fstep{background:var(--tile);border-radius:18px;padding:18px}
+.fstep .code{display:block;margin-bottom:4px}
+.fstep b{display:block;font-size:16px;margin-bottom:6px}
+.story .fstep p{font-family:var(--sans);font-size:13.5px;line-height:1.45;color:var(--ink2);margin:0}
+.farrow{display:flex;align-items:center;color:var(--ink3);font-size:18px}
+#ecchart,#catchart{width:100%;height:auto;display:block}
+@media (max-width:620px){.flow{grid-template-columns:1fr}.farrow{justify-content:center;transform:rotate(90deg);height:18px}}
+.recl{margin:14px 0 0;padding-left:20px;display:grid;gap:10px}
+.recl li{font-family:var(--sans);font-size:15px;line-height:1.5;color:var(--ink2)}
+.recl li b{color:var(--ink)}
+.lead-stack{grid-template-columns:1fr}
+.lead-stack .readout{display:grid;grid-template-columns:auto 1fr 1fr;gap:12px 40px;align-items:center}
+.lead-stack .readout .code{grid-column:1/-1;margin:0}
+.lead-stack .readout .num{margin:0}
+.lead-stack .readout .lbl{margin:0 0 6px}
+.lead-stack .readout .note{margin:0}
+.lead-stack .readout .log{margin:0;padding:0 0 0 24px;border-top:0;border-left:1px solid var(--tile2)}
+@media (max-width:820px){.lead-stack .readout{grid-template-columns:1fr}.lead-stack .readout .log{padding:14px 0 0;border-left:0;border-top:1px solid var(--tile2)}}
+.pbi{max-width:min(100%, calc((100vh - 390px) * 1.78))}
+.pbistage{aspect-ratio:1500/844;background:#2b2b2b}
+.pbistage img,.pbistage iframe{display:block;width:100%;height:100%;border:0}
+.livebtn{background:none;border:1px solid #48484a;border-radius:6px;padding:3px 10px;cursor:pointer;font:inherit;font-size:12px}
+.livebtn:hover{border-color:#64a8ff}
+#pbiwz{margin:20px 0 8px}
+.seg-pb,.seg-wz{flex-wrap:wrap;border-radius:18px}
+@media (max-width:620px){.bbar .url{display:none}.bbar{justify-content:flex-end}.wzhead .seg{width:100%}}
+.wz{margin:24px 0 8px}
+.wzhead{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.wzread{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;background:#fff;border-radius:16px;padding:16px 22px;margin-bottom:18px;min-height:96px}
+.wzread .num{font-size:44px;font-weight:700;letter-spacing:-.04em;line-height:1;transition:color .3s}
+.wzread .lbl{font-size:16px;font-weight:600;margin-bottom:2px}
+.wzread .note{font-size:14.5px;color:var(--ink2);line-height:1.45}
+.wzread .log{font-family:var(--mono);font-size:11px;color:var(--ink3);line-height:1.8;padding-left:22px;border-left:1px solid var(--tile2);white-space:nowrap}
+.browser{border-radius:14px;overflow:hidden;background:#1c1c1e;box-shadow:0 30px 60px -30px rgba(0,0,0,.45),0 0 0 1px rgba(0,0,0,.08);max-width:min(100%, calc((100vh - 390px) * 1.26));margin:0 auto}
+.bbar{display:flex;align-items:center;gap:14px;height:38px;padding:0 14px;background:#2c2c2e}
+.dots{display:flex;gap:7px}.dots i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.dots i:nth-child(2){background:#febc2e}.dots i:nth-child(3){background:#28c840}
+.url{flex:1;text-align:center;font-size:12px;color:#a1a1a6;background:#1c1c1e;border-radius:7px;padding:4px 12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.blink{font-size:12px;color:#64a8ff;white-space:nowrap}
+.browser img{display:block;width:100%;height:auto}
+@media (max-width:820px){.wzread{grid-template-columns:auto 1fr}.wzread .log{grid-column:1/-1;padding:10px 0 0;border-left:0;border-top:1px solid var(--tile2);white-space:normal}.browser{max-width:100%}.dots{display:none}}
+.shot{border-radius:14px;overflow:hidden;background:#111;aspect-ratio:1990/1600}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.dims{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:4px 0 22px}
+.dim{background:var(--tile);border-radius:16px;padding:14px 16px}
+.dim b{display:block;font-size:15px;margin-bottom:4px}
+.story .dim p{font-family:var(--sans);font-size:13px;line-height:1.4;color:var(--ink2);margin:0 0 8px}
+#rentchart{width:100%;height:auto;display:block}
+@media (max-width:620px){.dims{grid-template-columns:1fr 1fr}}
+.legend{display:flex;gap:18px;font-size:13px;color:var(--ink2);margin:-8px 0 14px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+#scchart,#ridechart{width:100%;height:auto;display:block}
+.bars{display:flex;gap:28px;align-items:flex-end;height:260px;border-bottom:1px solid var(--line)}
+.bar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.bar .val{font-size:24px;font-weight:700;letter-spacing:-.03em;margin-bottom:8px}
+.bar .fill{width:100%;max-width:130px;border-radius:14px 14px 4px 4px;transition:height .8s cubic-bezier(.2,.8,.2,1),background .4s}
+.barlabels{display:flex;gap:28px;margin-top:12px}
+.barlabels div{flex:1;text-align:center;font-size:13px;color:var(--ink2);line-height:1.35}
+.cap{font-size:12px;color:var(--ink3);margin-top:20px;line-height:1.5;border-top:1px solid var(--tile2);padding-top:12px}
+.readout{display:flex;flex-direction:column}
+.readout .code{margin-bottom:auto}
+.readout .num{font-size:clamp(52px,6vw,72px);font-weight:700;letter-spacing:-.05em;line-height:1;margin-top:28px;transition:color .4s}
+.readout .lbl{font-size:17px;font-weight:500;margin-top:10px}
+.readout .note{font-size:14.5px;color:var(--ink2);margin-top:14px;line-height:1.55}
+.readout .log{font-family:var(--mono);font-size:11px;color:var(--ink3);margin-top:22px;padding-top:14px;border-top:1px solid var(--tile2);line-height:1.9}
+
+.story{padding:48px 0 8px}
+.story p{font-family:var(--serif);font-size:21px;line-height:1.6;margin-bottom:22px;color:#2a2a2c}
+.dropcap::first-letter{font-family:var(--serif);float:left;font-size:76px;line-height:.82;padding:8px 12px 0 0;color:var(--accent)}
+.story .step{font-family:var(--mono);font-size:11.5px;color:var(--accent);margin:44px 0 8px;letter-spacing:.02em}
+.story h4{font-size:26px;font-weight:700;letter-spacing:-.025em;line-height:1.2;margin-bottom:14px}
+.pull{font-family:var(--serif);font-style:italic;font-size:clamp(28px,3.6vw,40px);line-height:1.22;text-align:center;max-width:820px;margin:40px auto;padding:0 12px;letter-spacing:-.01em}
+.pull::before{content:"";display:block;width:48px;height:3px;background:var(--accent);border-radius:2px;margin:0 auto 24px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:32px 0 20px}
+.kpi{background:var(--tile);border-radius:var(--radius);padding:28px}
+.kpi b{display:block;font-size:40px;letter-spacing:-.04em;line-height:1}
+.kpi span{display:block;margin-top:10px;font-size:14px;color:var(--ink2);line-height:1.4}
+.funnel{display:grid;gap:10px}
+.frow{display:grid;grid-template-columns:100px 1fr 60px;align-items:center;gap:14px;font-size:14px}
+.frow .track{background:var(--tile2);border-radius:8px;height:30px;overflow:hidden}
+.frow .track div{height:100%;border-radius:8px}
+.frow em{font-style:normal;font-weight:600;text-align:right}
+.stackrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding:28px 0;border-top:1px solid rgba(0,0,0,.08);margin-top:48px}
+.stackrow .spec{border:0;padding:0;margin:0;grid-template-columns:auto 1fr}
+.next{background:var(--tile);border-radius:var(--radius);padding:32px 36px;display:flex;justify-content:space-between;align-items:center;margin:20px 0 80px;cursor:pointer;transition:transform .3s}
+.next:hover{transform:translateY(-3px)}
+.next small{display:block;color:var(--ink3);font-family:var(--mono);font-size:11.5px;margin-bottom:6px}
+.next b{font-weight:700;font-size:26px;letter-spacing:-.025em}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}*{transition:none!important;animation:none!important}}
+
+@media (max-width:820px){
+  .grid{grid-template-columns:1fr}
+  .card.wide{grid-column:auto;grid-template-columns:1fr;gap:0}
+  .card.wide .viz{margin:22px 0 4px}
+  .card{padding:28px}
+  .about,.lead{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr 1fr}
+  .navlinks{display:none}
+  .menu-btn{display:flex}
+  .hero{padding:80px 0 56px}
+  .stats{gap:28px}
+  .tile{padding:26px}
+  .bars,.barlabels{gap:14px}
+  .story p{font-size:19px}
+}
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="wrap nav-inner">
-    <div class="brand">Ashwin Philip<span>.</span></div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#beyond">Beyond</a>
-      <a href="#contact">Contact</a>
-    </div>
+<nav><div class="wrap">
+  <a class="brand" href="#/">Ashwin Philip</a>
+  <div class="navlinks">
+    <a href="#/" data-scroll="work">Work</a>
+    <a href="#/" data-scroll="about">About</a>
+    <a href="#/" data-scroll="contact">Contact me</a>
   </div>
-</nav>
+  <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></nav>
 
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Business Intelligence &amp; Data Analyst</div>
-    <h1><span class="brk">Breaking down complex data.</span> <span class="bld">Building intelligent strategy.</span></h1>
-    <p class="hero-sub">I approach data the way an engineer approaches a system: take it apart, understand how it works, and rebuild it into something people can act on.</p>
-    <div class="hero-cta">
-      <a href="#work" class="btn btn-primary">View my work &rarr;</a>
-      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+<!-- ================= HOME ================= -->
+<main id="home" class="page on">
+  <section class="hero wrap">
+    <div class="eyebrow reveal">Data Analyst · Seattle</div>
+    <h1 class="reveal"><span class="ln">Breaking down complex data.</span> <span class="ln grad">Building intelligent strategy.</span></h1>
+    <p class="sub reveal">I approach data the way an engineer approaches a system: take it apart, understand how it works, and rebuild it into something people can act on.</p>
+    <div class="ctas reveal"><a class="pill primary" href="Ashwin_Philip_Resume.pdf" target="_blank" rel="noopener">Download résumé</a><button class="pill ghost asklink" type="button" data-ask>Ask me a question ›</button></div>
+    <div class="cred reveal">
+      <div class="credi"><span class="dot"></span>Open to Data roles</div>
+      <div class="credi">MSBA, UW</div>
+      <div class="credi mono-row">SQL · Python · Tableau · Power BI · A/B Testing</div>
     </div>
-  </div>
-</header>
+    <a class="scrollcue" href="#/" data-scroll="work" aria-label="Scroll to the catalog"><span></span></a>
+  </section>
 
-<div class="wrap"><div class="divider"></div></div>
+  <section class="wrap" id="work">
+    <div class="section-head reveal"><h2>Catalog.</h2></div>
 
-<section id="about">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num">01</span>
-      <h2 class="sec-title">About</h2>
-    </div>
-    <div class="about-layout">
-      <div class="headshot">
-        <!-- Replace this placeholder div with: <img src="headshot.jpg" alt="Ashwin Philip"> -->
-           <img src="IMG_2525.JPG" alt="Ashwin Philip">
-      </div>
-      <div class="about-grid">
-        <p>Hi, I am Ashwin. I am a <strong>Business Intelligence and Data Analyst</strong> with a background in telecommunications engineering and a Master of Science in Business Analytics from the University of Washington.</p>
-        <p>My engineering background taught me to break down complex systems and understand how things operate. I approach data analysis the exact same way. My focus is entirely on finding the ground truth and translating a complicated web of information into clear, actionable business strategy.</p>
-        <p class="pull">At the end of every data point is a human behavior.</p>
-        <p>My perspective is heavily shaped by the places I have lived. I grew up in Dubai and later spent time in Sydney, where I briefly worked as a gelato maker (shoutout to Rivareno). Experiencing such vibrant, international hubs gave me a deep appreciation for different cultures, global perspectives, and the way people connect. This inherent curiosity about people makes me a better analyst.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="work" style="padding-top:20px">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num">02</span>
-      <h2 class="sec-title">Selected work</h2>
-    </div>
-
-    <div class="proj">
-      <div class="proj-index">01</div>
-      <div class="proj-body">
-        <h3>TaskFlow Growth Analytics <span class="star">◆ FEATURED</span></h3>
-        <div class="proj-tag">Experimentation &middot; Causal Inference &middot; ML</div>
-        <p>An end-to-end growth analytics case study on a simulated B2B SaaS company. It covers the full path a real growth team works through: <span class="hl">funnel and retention analysis, A/B testing, causal inference, churn modeling, and customer lifetime estimation</span>. Because the data is synthetic, the true answer behind every number is known, so the project shows whether standard methods actually recover the truth or get fooled by it.</p>
-        <div class="stack">
-          <span class="chip">Python</span><span class="chip">BigQuery</span><span class="chip">dbt</span>
-          <span class="chip">statsmodels</span><span class="chip">lifelines</span><span class="chip">Streamlit</span>
+    <div class="grid">
+      <!-- AP-001 TaskFlow -->
+      <article class="card wide reveal" data-go="taskflow">
+        <div>
+          <div class="top"><span class="code"><b>AP-001</b> · Growth / Experimentation</span><span class="status live"><i></i>Live app</span></div>
+          <h3>TaskFlow Growth Analytics</h3>
+          <div class="headline">Why a 9x lift in upgrades was an illusion.</div>
+          <div class="big"><b>9x → 0</b><span>Nudged users upgraded 9x more often. Against equally active users, the gap vanished.</span></div>
+          <dl class="spec"><dt>stack</dt><dd>Python, BigQuery, dbt, lifelines</dd><dt>methods</dt><dd>A/B tests, causal inference, survival</dd></dl>
+          <div class="actions"><a class="pill ghost" href="#/taskflow">Read the case ›</a><a class="pill ghost" href="https://taskflow-growth-analytics.streamlit.app" target="_blank" rel="noopener">Try it ↗</a><a class="pill ghost" href="https://github.com/ash-philip/taskflow-growth-analytics" target="_blank" rel="noopener">GitHub ↗</a></div>
         </div>
-        <div class="proj-links">
-          <a href="https://taskflow-growth-analytics.streamlit.app">Live app &rarr;</a>
-          <a class="muted" href="https://github.com/ash-philip/taskflow-growth-analytics">GitHub &rarr;</a>
+        <div class="viz">
+          <svg viewBox="0 0 400 220" aria-label="Upgrade rate: naive vs fair comparison">
+            <text x="0" y="12" font-size="11" fill="#86868b" font-weight="600" letter-spacing=".5">WHAT THE DASHBOARD SAID</text>
+            <text x="0" y="42" font-size="13" fill="#6e6e73">Not nudged</text>
+            <rect x="110" y="28" width="24" height="22" rx="6" fill="#c7c7cc"/><text x="142" y="44" font-size="13" fill="#6e6e73">6%</text>
+            <text x="0" y="76" font-size="13" fill="#1d1d1f" font-weight="600">Nudged</text>
+            <rect x="110" y="62" width="226" height="22" rx="6" fill="#0071e3"/><text x="344" y="78" font-size="13" fill="#1d1d1f" font-weight="600">58%</text>
+            <text x="0" y="128" font-size="11" fill="#86868b" font-weight="600" letter-spacing=".5">AMONG EQUALLY HEAVY USERS</text>
+            <text x="0" y="158" font-size="13" fill="#6e6e73">Not nudged</text>
+            <rect x="110" y="144" width="228" height="22" rx="6" fill="#c7c7cc"/><text x="346" y="160" font-size="13" fill="#6e6e73">58.5%</text>
+            <text x="0" y="192" font-size="13" fill="#1d1d1f" font-weight="600">Nudged</text>
+            <rect x="110" y="178" width="226" height="22" rx="6" fill="#0071e3"/><text x="344" y="194" font-size="13" fill="#1d1d1f" font-weight="600">58.1%</text>
+          </svg>
         </div>
-      </div>
+      </article>
+
+      <!-- AP-002 Transit -->
+      <article class="card reveal" data-go="transit">
+        <div class="top"><span class="code"><b>AP-002</b> · Forecasting / Scenarios</span><span class="status live"><i></i>Live app</span></div>
+        <h3>Transit &amp; Rideshare Analysis</h3>
+        <div class="headline">Higher fares alone may not be the way to go.</div>
+        <div class="viz">
+          <svg viewBox="0 0 320 170" aria-label="Farebox recovery by scenario">
+            <line x1="0" y1="150" x2="320" y2="150" stroke="#d2d2d7"/>
+            <line x1="0" y1="53" x2="320" y2="53" stroke="#86868b" stroke-dasharray="3 4"/>
+            <text x="0" y="44" font-size="10" fill="#86868b">base case 87%</text>
+            <g font-size="11" text-anchor="middle">
+              <rect x="10" y="53" width="56" height="97" rx="6" fill="#c7c7cc"/><text x="38" y="168" fill="#6e6e73">Base</text>
+              <rect x="88" y="42" width="56" height="108" rx="6" fill="#34c759" opacity=".55"/><text x="116" y="168" fill="#6e6e73">Fare +5%</text>
+              <rect x="166" y="30" width="56" height="120" rx="6" fill="#34c759"/><text x="194" y="22" fill="#1d1d1f" font-weight="700">93%</text><text x="194" y="168" fill="#6e6e73">Fare +10%</text>
+              <rect x="244" y="64" width="56" height="86" rx="6" fill="#ff9f0a"/><text x="272" y="84" fill="#fff" font-weight="700">84%</text><text x="272" y="168" fill="#6e6e73">+ Cost +8%</text>
+            </g>
+          </svg>
+        </div>
+        <dl class="spec"><dt>stack</dt><dd>Python, Streamlit, Power BI, DAX</dd><dt>methods</dt><dd>SARIMAX, backtesting, scenarios</dd></dl>
+        <div class="actions"><a class="pill ghost" href="#/transit">Read the case ›</a><a class="pill ghost" href="https://transit-rideshare-analysis.streamlit.app" target="_blank" rel="noopener">Try it ↗</a><a class="pill ghost" href="https://app.powerbi.com/view?r=eyJrIjoiNzhhN2UzYzUtZDg3YS00ODk0LTkyZTAtMGZiYzkwNzE3N2RlIiwidCI6ImY2YjZkZDViLWYwMmYtNDQxYS05OWEwLTE2MmFjNTA2MGJkMiIsImMiOjZ9" target="_blank" rel="noopener">Power BI ↗</a><a class="pill ghost" href="https://github.com/ash-philip/Transit-Rideshare-Analysis" target="_blank" rel="noopener">GitHub ↗</a></div>
+      </article>
+
+      <!-- AP-003 Ecommerce -->
+      <article class="card reveal" data-go="ecommerce">
+        <div class="top"><span class="code"><b>AP-003</b> · Customer analytics / SQL</span></div>
+        <h3>Brasimart E-Commerce Analytics</h3>
+        <div class="headline">Late boxes cost 2.7 stars.</div>
+        <div class="viz"><svg viewBox="0 0 320 170" aria-label="Average review by delivery timing" id="dots"></svg></div>
+        <dl class="spec"><dt>stack</dt><dd>SQL, Azure SQL, Python, pandas</dd><dt>methods</dt><dd>RFM segments, delivery vs reviews</dd></dl>
+        <div class="actions"><a class="pill ghost" href="#/ecommerce">Read the case ›</a><a class="pill ghost" href="https://github.com/ash-philip/Ecommerce-database-analytics" target="_blank" rel="noopener">GitHub ↗</a></div>
+      </article>
+
+      <!-- AP-004 Seattle -->
+      <article class="card wide reveal" data-go="seattle">
+        <div>
+          <div class="top"><span class="code"><b>AP-004</b> · BI / Tableau</span><span class="status live"><i></i>Live dashboard</span></div>
+          <h3>Seattle Rental Neighborhood Wizard</h3>
+          <div class="headline">Three questions. Find your neighborhood.</div>
+          <dl class="spec"><dt>stack</dt><dd>Tableau, Python, OSMnx, GTFS</dd><dt>inputs</dt><dd>Census ACS, OpenStreetMap, transit</dd></dl>
+          <div class="actions"><a class="pill ghost" href="#/seattle">Read the case ›</a><a class="pill ghost" href="https://public.tableau.com/views/NeighborhoodFinderWizard/Dashboard2" target="_blank" rel="noopener">Try it ↗</a><a class="pill ghost" href="https://github.com/ash-philip/Seattle-Rental-Neighborhood-Wizard" target="_blank" rel="noopener">GitHub ↗</a></div>
+        </div>
+        <div class="viz"><svg viewBox="0 0 360 150" aria-label="Six scoring dimensions" id="dims"></svg></div>
+      </article>
     </div>
 
-<div class="proj">
-<div class="proj-index">02</div>
-<div class="proj-body">
-<h3>Transit &amp; Rideshare Analysis</h3>
-<div class="proj-tag">Time-Series Forecasting &middot; Data Engineering &middot; BI</div>
-<p>A rebuild of a ridership and revenue forecasting problem from a real Pierce Transit consulting engagement, recreated end to end on synthetic data so it can be shared publicly. I built the data pipeline, trained <span class="hl">SARIMAX time-series models</span> to forecast boardings, revenue, and farebox recovery, and deployed an interactive <span class="hl">Streamlit application</span> for exploring fare-change scenarios.</p>
-<div class="stack">
-<span class="chip">Python</span><span class="chip">Azure SQL</span><span class="chip">statsmodels</span><span class="chip">Streamlit</span>
-</div>
-<div class="proj-links">
-<a href="https://transit-rideshare-analysis.streamlit.app">Live app &rarr;</a>
-<a class="muted" href="https://github.com/ash-philip/Transit-Rideshare-Analysis">GitHub &rarr;</a>
-</div>
-</div>
-</div>
-
-  <div class="proj">
-      <div class="proj-index">03</div>
-      <div class="proj-body">
-        <h3>E-Commerce Database Analytics</h3>
-        <div class="proj-tag">SQL &middot; Data Modeling &middot; Business Analysis</div>
-        <p>An end-to-end relational database project transforming raw e-commerce records into a structured cloud data warehouse. I designed the schema in Azure SQL and performed deep exploratory analysis using Python and pandas. The project focuses on deriving strategic BI metrics, including <span class="hl">RFM customer segmentation, cohort retention modeling, and customer lifetime value</span> calculations.</p>
-        <div class="stack">
-          <span class="chip">SQL</span><span class="chip">Azure SQL</span><span class="chip">Python</span><span class="chip">pandas</span>
-        </div>
-        <div class="proj-links">
-          <a class="muted" href="https://github.com/ash-philip/Ecommerce-database-analytics">GitHub &rarr;</a>
+    <div class="ab" id="about">
+      <div class="ab-top">
+        <div class="ab-photo reveal"><img src="assets/headshot.jpg" alt="Ashwin Philip"></div>
+        <div class="tile ab-bio reveal">
+          <span class="code">about</span>
+          <h2>Engineer by training. Analyst by obsession.</h2>
+          <p>Hi, I am Ashwin. I am a Business Intelligence and Data Analyst with a background in telecommunications engineering and a Master of Science in Business Analytics from the University of Washington.</p>
+          <p>My engineering background taught me to break down complex systems and understand how things operate. I approach data analysis the exact same way. My focus is entirely on finding the ground truth and translating a complicated web of information into clear, actionable business strategy.</p>
+          <p class="ab-quote">At the end of every data point is a human behavior.</p>
+          <p>My perspective is heavily shaped by the places I have lived. I grew up in Dubai and later spent time in Sydney, where I briefly worked as a gelato maker (shoutout to Rivareno). Experiencing such vibrant, international hubs gave me a deep appreciation for different cultures, global perspectives, and the way people connect. This inherent curiosity about people makes me a better analyst.</p>
         </div>
       </div>
+
     </div>
+  </section>
 
-  <div class="proj">
-<div class="proj-index">04</div>
-<div class="proj-body">
-<h3>Seattle Rental Neighborhood Wizard</h3>
-<div class="proj-tag">Geospatial Analysis &middot; Data Engineering &middot; BI</div>
-<p>An interactive Tableau tool that matches renters to Seattle neighborhoods. A three-step wizard scores every neighborhood against a person's budget, commute time, walkability, transit access, and social vibe, then ranks the best matches with plain-language explanations for each one. The pipeline combines <span class="hl">Census demographic data, OpenStreetMap street networks, and GTFS transit feeds</span> into a single weighted scoring model.</p>
-<div class="stack">
-<span class="chip">Tableau</span><span class="chip">Python</span><span class="chip">OSMnx</span><span class="chip">NetworkX</span><span class="chip">GTFS</span>
-</div>
-<div class="proj-links">
-<a href="https://public.tableau.com/views/NeighborhoodFinderWizard/Dashboard2">Live dashboard &rarr;</a>
-<a class="muted" href="https://github.com/ash-philip/Seattle-Rental-Neighborhood-Wizard">GitHub &rarr;</a>
-</div>
-</div>
-</div>
-    
-  </div>
-</section>
-
-<section id="beyond" style="padding-top:20px">
-  <div class="wrap">
-    <div class="beyond">
-      <div class="sec-head">
-        <span class="sec-num">03</span>
-        <h2 class="sec-title">Beyond the data</h2>
-      </div>
-      <p>These days, I call the PNW home. When I am away from my desk, I am usually exploring Seattle's local cafes, hunting for the best fish and chips to compare against Sydney's, or watching Arsenal test my emotional resilience.</p>
-      <div class="coyg">COYG.</div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <div class="wrap">
+  <section class="contact wrap reveal" id="contact">
     <h2>Let's talk.</h2>
-    <p>Open to data, analytics, and business intelligence roles. If you have a problem worth digging into, I would love to hear about it.</p>
-    <div class="contact-links">
-      <a class="btn btn-primary" href="mailto:ashwin.abraham.p@gmail.com">Email me</a>
-      <a class="btn btn-ghost" href="https://www.linkedin.com/in/ashwinabrahamphilip">LinkedIn</a>
-      <a class="btn btn-ghost" href="https://github.com/ash-philip">GitHub</a>
+    <p>Open to data, analytics and BI roles.</p>
+    <div class="ctas">
+      <a class="pill primary" href="mailto:ashwin.abraham.p@gmail.com">Email me</a>
+      <a class="pill ghost" href="https://www.linkedin.com/in/ashwinabrahamphilip" target="_blank" rel="noopener">LinkedIn ›</a>
+      <a class="pill ghost" href="https://github.com/ash-philip" target="_blank" rel="noopener">GitHub ›</a>
     </div>
+  </section>
+</main>
+
+<!-- ================= TASKFLOW CASE ================= -->
+<main id="taskflow" class="page">
+  <div class="wrap">
+    <a class="back" href="#/">‹ Catalog</a>
+
+    <header class="phero">
+      <span class="code"><b>AP-001</b> · TaskFlow Growth Analytics</span>
+      <h1>Why a 9x lift in upgrades was an illusion.</h1>
+      <p class="dek">A growth analytics case study on a simulated SaaS product, testing whether standard methods can tell a real effect from a misleading one.</p>
+      <div class="byline"><span>By <b>Ashwin Philip</b></span><span>2 min read</span><span class="status live" style="background:var(--tile)"><i></i>Live app</span></div>
+    </header>
+
+    <section class="lead">
+      <div class="tile">
+        <div class="ttl">Who upgraded after seeing the nudge?</div>
+        <div class="tsub">Share of free accounts that later upgraded</div>
+        <div class="seg" role="tablist"><button class="on" data-view="naive">What the dashboard said</button><button data-view="fair">Reality</button></div>
+        <div class="bars">
+          <div class="bar"><div class="val" id="v1"></div><div class="fill" id="f1" style="background:#c7c7cc"></div></div>
+          <div class="bar"><div class="val" id="v2"></div><div class="fill" id="f2" style="background:#0071e3"></div></div>
+        </div>
+        <div class="barlabels"><div id="l1"></div><div>Saw the nudge<br><small>62 heavy users</small></div></div>
+        <div class="cap">Source: 1,444 simulated free accounts. The data was generated so the true effect is known.</div>
+      </div>
+      <div class="tile readout">
+        <span class="code">readout</span>
+        <div class="num" id="cnum"></div>
+        <div class="lbl" id="clbl"></div>
+        <div class="note" id="cnote"></div>
+        <div class="log">n = 1,444 free accounts<br>verified 3 independent ways</div>
+      </div>
+    </section>
+
+    <article class="read story">
+      <p class="dropcap">TaskFlow is a fictional project-management software company. I generated two years of customer data for it, covering 2,026 accounts from signup to cancellation, and analyzed it the way a growth team would: funnel, retention, experiments and customer lifetime. Because I built the data, I know the true answer behind every number. That lets the project test something most analyses can't: whether standard methods actually find the truth.</p>
+
+      <div class="step">01 · problem</div>
+      <h4>Which growth levers actually work?</h4>
+      <p>Only a third of TaskFlow's signups ever became active users, and most free accounts never upgraded. I tested three changes, each aimed at a different stage of the funnel: a shorter onboarding flow to increase activation, a reframed discount to steer trial users toward annual plans, and an in-app nudge to move heavy free users to a paid plan. The goal was to find out which of these changes actually worked, and which only looked like they did.</p>
+
+      <div class="step">02 · approach</div>
+      <h4>A dataset with known answers.</h4>
+      <p>Because the data is simulated, each experiment has a true effect built in, so the analysis can be checked against the real answer. I modeled the data in dbt on BigQuery, ran a power analysis to check whether each test had enough users to detect its effect, and, for the nudge, compared nudged users only with users who were equally active but never saw it.</p>
+
+      <div class="step">03 · impact</div>
+      <h4>One misleading win, two open questions.</h4>
+      <p>Once users were compared fairly, the upgrade nudge showed no real effect: a difference of −0.4 percentage points, confirmed with three separate methods. The onboarding and discount tests were too small to give a reliable answer, so the conclusion is: not enough data yet.</p>
+      <p>The clearest opportunity sits earlier in the funnel. Only a third of signups become active users, but 79% of those who do go on to pay.</p>
+    </article>
+
+    <section class="tile reveal" style="margin-top:12px">
+      <div class="ttl">The funnel</div>
+      <div class="tsub">Accounts at each stage</div>
+      <div class="funnel">
+        <div class="frow"><span>Signed up</span><div class="track"><div style="width:100%;background:#c7c7cc"></div></div><em>2,026</em></div>
+        <div class="frow"><span>Activated</span><div class="track"><div style="width:32.7%;background:#0071e3"></div></div><em>663</em></div>
+        <div class="frow"><span>Paid</span><div class="track"><div style="width:26%;background:#34c759"></div></div><em>526</em></div>
+      </div>
+      <div class="cap">Fix activation first. Once users get started, most of them pay.</div>
+    </section>
+
+    <section class="kpis">
+      <div class="kpi reveal"><b>33%</b><span>of signups become active users</span></div>
+      <div class="kpi reveal"><b>79%</b><span>of active users go on to pay</span></div>
+      <div class="kpi reveal"><b>18 mo</b><span>median customer lifetime</span></div>
+      <div class="kpi reveal"><b>2,026</b><span>accounts simulated over 24 months</span></div>
+    </section>
+
+    <div class="stackrow">
+      <dl class="spec"><dt>stack</dt><dd>Python · BigQuery · dbt · statsmodels · lifelines · Streamlit</dd></dl>
+      <div style="display:flex;gap:8px"><a class="pill primary" href="https://taskflow-growth-analytics.streamlit.app" target="_blank" rel="noopener">Open live app ↗</a><a class="pill ghost" href="https://github.com/ash-philip/taskflow-growth-analytics" target="_blank" rel="noopener">GitHub ›</a></div>
+    </div>
+
+    <div class="next" onclick="go('transit')"><div><small>next · AP-002</small><b>Higher fares alone may not be the way to go.</b></div><span class="pill ghost">›</span></div>
   </div>
-</section>
+</main>
 
-<footer>
-  <div class="wrap"><p>Designed &amp; built by Ashwin Philip &middot; Seattle, WA</p></div>
-</footer>
+<!-- ================= TRANSIT CASE ================= -->
+<main id="transit" class="page">
+  <div class="wrap">
+    <a class="back" href="#/">‹ Catalog</a>
 
+    <header class="phero">
+      <span class="code"><b>AP-002</b> · Transit &amp; Rideshare Analysis</span>
+      <h1>Higher fares alone may not be the way to go.</h1>
+      <p class="dek">A forecasting and scenario-planning case study for a transit rideshare program, testing how fare changes and rising costs shape its financial outlook.</p>
+      <div class="byline"><span>By <b>Ashwin Philip</b></span><span>2 min read</span><span class="status live" style="background:var(--tile)"><i></i>Live app</span></div>
+    </header>
+
+    <section class="lead">
+      <div class="tile">
+        <div class="ttl">How much of the program's cost do fares cover?</div>
+        <div class="tsub">Share of operating costs covered by fares over the next 12 months, by scenario</div>
+        <div class="seg seg-sc" role="tablist">
+          <button class="on" data-sc="0">Base</button><button data-sc="1">Fare +5%</button><button data-sc="2">Fare +10%</button><button data-sc="3">Fare +5%, cost +8%</button>
+        </div>
+        <svg id="scchart" viewBox="0 0 520 250" aria-label="Farebox recovery by scenario"></svg>
+        <div class="cap">Dashed line marks the base case. Ridership response to price assumed at −0.2 for a 5% increase and −0.3 for a 10% increase. Synthetic data.</div>
+      </div>
+      <div class="tile readout">
+        <span class="code">readout</span>
+        <div class="num" id="snum"></div>
+        <div class="lbl" id="slbl"></div>
+        <div class="note" id="snote"></div>
+        <div class="log" id="slog"></div>
+      </div>
+    </section>
+
+    <article class="read story">
+      <p class="dropcap">This project models the rideshare and vanpool program of a public transit agency. It is based on consulting work I did for the agency, rebuilt with fully synthetic data so it can be shared publicly. The data mirrors a real program's structure: a sharp drop in ridership in 2020, a gradual recovery, seasonal swings, and fuel, maintenance and insurance costs that move independently of each other.</p>
+
+      <div class="step">01 · problem</div>
+      <h4>Is the program still sustainable?</h4>
+      <p>The program had not raised its fares in over a decade, while fuel prices and operating costs kept climbing. I set out to answer two questions: is the program still financially feasible, and how could fares be raised to improve cost recovery (the share of operating costs covered by fare revenue) and keep pace with the market?</p>
+
+      <div class="step">02 · approach</div>
+      <h4>Forecast first, then test the options.</h4>
+      <p>I generated seven years of monthly operating data and built a validated pipeline that combines ridership, revenue and costs into a single KPI dataset. I then forecast the next 12 months of ridership with a seasonal time-series model (SARIMAX), and validated it by training on data through 2025 and testing on 2026: it beat a simple seasonal baseline by 22% on average error. Against that forecast, I tested four planning scenarios:</p>
+      <div class="scgrid">
+        <div class="scn"><span class="code">01</span><b>Keep fares as they are</b>
+          <div class="sr"><span>Fare</span><div class="sb"><i style="width:0%;background:#34c759"></i></div><em>+0%</em></div>
+          <div class="sr"><span>Cost</span><div class="sb"><i style="width:0%;background:#ff9f0a"></i></div><em>+0%</em></div>
+          <div class="sr"><span>Riders</span><div class="sb"><i style="width:0%;background:#ff375f"></i></div><em>0%</em></div>
+        </div>
+        <div class="scn"><span class="code">02</span><b>Moderate fare increase</b>
+          <div class="sr"><span>Fare</span><div class="sb"><i style="width:40%;background:#34c759"></i></div><em>+5%</em></div>
+          <div class="sr"><span>Cost</span><div class="sb"><i style="width:0%;background:#ff9f0a"></i></div><em>+0%</em></div>
+          <div class="sr"><span>Riders</span><div class="sb"><i style="width:8%;background:#ff375f"></i></div><em>−1%</em></div>
+        </div>
+        <div class="scn"><span class="code">03</span><b>Higher fare increase</b>
+          <div class="sr"><span>Fare</span><div class="sb"><i style="width:80%;background:#34c759"></i></div><em>+10%</em></div>
+          <div class="sr"><span>Cost</span><div class="sb"><i style="width:0%;background:#ff9f0a"></i></div><em>+0%</em></div>
+          <div class="sr"><span>Riders</span><div class="sb"><i style="width:24%;background:#ff375f"></i></div><em>−3%</em></div>
+        </div>
+        <div class="scn"><span class="risk">Most risk</span><span class="code">04</span><b>Fare increase + rising costs</b>
+          <div class="sr"><span>Fare</span><div class="sb"><i style="width:40%;background:#34c759"></i></div><em>+5%</em></div>
+          <div class="sr"><span>Cost</span><div class="sb"><i style="width:64%;background:#ff9f0a"></i></div><em>+8%</em></div>
+          <div class="sr"><span>Riders</span><div class="sb"><i style="width:8%;background:#ff375f"></i></div><em>−1%</em></div>
+        </div>
+      </div>
+      <p class="scnote">Each scenario accounts for some riders leaving when fares go up.</p>
+
+      <div class="step">03 · impact</div>
+      <h4>Fares help, but costs decide the outcome.</h4>
+      <p>Raising fares does improve cost recovery. At current fares, fare revenue covers 87% of operating costs. A 5% increase raises that to 91%, and a 10% increase to 93%, though the larger increase loses about 3% of riders.</p>
+      <p>The risk is cost growth. If operating costs rise 8% alongside a 5% fare increase, cost recovery drops to 84%, lower than if fares had not changed at all.</p>
+      <div class="rec">
+        <span class="code">recommendation</span>
+        <p>Raise fares moderately, around 5%, and pair the increase with active cost management. A fare increase on its own cannot keep pace with rising costs.</p>
+      </div>
+    </article>
+
+
+    <section class="tile wz reveal" id="pbiwz">
+      <div class="wzhead">
+        <div><div class="ttl">Also built in Power BI</div><div class="tsub" style="margin-bottom:0">The same analysis as a five-page report, with DAX what-if parameters</div></div>
+        <div class="seg seg-pb" role="tablist" style="margin:0"><button class="on" data-pb="0">Overview</button><button data-pb="1">Diagnostics</button><button data-pb="2">Forecast</button><button data-pb="3">Backtest</button><button data-pb="4">Scenarios</button></div>
+      </div>
+      <div class="wzread">
+        <div class="num" id="pnum"></div>
+        <div><div class="lbl" id="plbl"></div><div class="note" id="pnote"></div></div>
+        <div class="log" id="plog"></div>
+      </div>
+      <div class="browser pbi">
+        <div class="bbar"><span class="dots"><i></i><i></i><i></i></span><span class="url">🔒 app.powerbi.com/view</span><button class="blink livebtn" type="button" id="pblive">Interact here</button><a class="blink" href="https://app.powerbi.com/view?r=eyJrIjoiNzhhN2UzYzUtZDg3YS00ODk0LTkyZTAtMGZiYzkwNzE3N2RlIiwidCI6ImY2YjZkZDViLWYwMmYtNDQxYS05OWEwLTE2MmFjNTA2MGJkMiIsImMiOjZ9" target="_blank" rel="noopener">Open ↗</a></div>
+        <div class="pbistage"><img id="pbimg" src="" alt="Power BI report page"></div>
+      </div>
+    </section>
+    <section class="tile reveal" style="margin-top:12px">
+      <div class="ttl">Revenue vs operating cost</div>
+      <div class="tsub">Annual totals, 2020 to 2026, with the 2027 forecast at current fares</div>
+      <div class="legend"><span><i style="background:#c7c7cc"></i>Operating cost</span><span><i style="background:#0071e3"></i>Fare revenue</span></div>
+      <svg id="ridechart" viewBox="0 0 1000 300" aria-label="Annual revenue vs operating cost"></svg>
+      <div class="cap">Percentages show cost recovery each year. The gap closed quickly as riders returned, then stalled as costs kept rising.</div>
+    </section>
+
+    <section class="kpis">
+      <div class="kpi reveal"><b>10+ yrs</b><span>since the program last raised its fares</span></div>
+      <div class="kpi reveal"><b>+73%</b><span>more riders in 2026 than in 2020, as the program recovered</span></div>
+      <div class="kpi reveal"><b>+18%</b><span>rise in yearly operating costs over the same period</span></div>
+      <div class="kpi reveal"><b>83%</b><span>of operating costs covered by fares in 2026, up from 56% in 2020</span></div>
+    </section>
+
+    <div class="stackrow">
+      <dl class="spec"><dt>stack</dt><dd>Python · pandas · statsmodels · Streamlit · Power BI · DAX</dd></dl>
+      <div style="display:flex;gap:8px"><a class="pill primary" href="https://transit-rideshare-analysis.streamlit.app" target="_blank" rel="noopener">Open live app ↗</a><a class="pill ghost" href="https://app.powerbi.com/view?r=eyJrIjoiNzhhN2UzYzUtZDg3YS00ODk0LTkyZTAtMGZiYzkwNzE3N2RlIiwidCI6ImY2YjZkZDViLWYwMmYtNDQxYS05OWEwLTE2MmFjNTA2MGJkMiIsImMiOjZ9" target="_blank" rel="noopener">Power BI report ↗</a><a class="pill ghost" href="https://github.com/ash-philip/Transit-Rideshare-Analysis" target="_blank" rel="noopener">GitHub ›</a></div>
+    </div>
+
+    <div class="next" onclick="go('ecommerce')"><div><small>next · AP-003</small><b>Late boxes cost 2.7 stars.</b></div><span class="pill ghost">›</span></div>
+  </div>
+</main>
+
+<!-- ================= ECOMMERCE CASE ================= -->
+<main id="ecommerce" class="page">
+  <div class="wrap">
+    <a class="back" href="#/">‹ Catalog</a>
+
+    <header class="phero">
+      <span class="code"><b>AP-003</b> · Brasimart E-Commerce Analytics</span>
+      <h1>Late boxes cost 2.7 stars.</h1>
+      <p class="dek">A customer and operations analytics case study on 96,000 real marketplace orders, looking at how delivery performance shapes the way customers rate their experience.</p>
+      <div class="byline"><span>By <b>Ashwin Philip</b></span><span>2 min read</span></div>
+    </header>
+
+    <section class="lead">
+      <div class="tile">
+        <div class="ttl">Does on-time delivery matter to customers?</div>
+        <div class="tsub" id="etsub">The average order, compared with its promised delivery date</div>
+        <div class="seg seg-ec" role="tablist"><button class="on" data-ec="avg">The average</button><button data-ec="split">By delivery timing</button></div>
+        <svg id="ecchart" viewBox="0 0 520 260" aria-label="Average review by delivery timing"></svg>
+        <div class="cap">Source: Olist public e-commerce dataset, 96,476 delivered orders, 2016 to 2018.</div>
+      </div>
+      <div class="tile readout">
+        <span class="code">readout</span>
+        <div class="num" id="enum"></div>
+        <div class="lbl" id="elbl"></div>
+        <div class="note" id="enote"></div>
+        <div class="log" id="elog"></div>
+      </div>
+    </section>
+
+    <article class="read story">
+      <p class="dropcap">Brasimart is my analysis of the Olist dataset, a public record of real orders from a Brazilian online marketplace between 2016 and 2018. I designed a relational database for it in Azure SQL, loaded the data, and used SQL and Python to study how revenue grew, what customers are worth, and how delivery performance affects the way customers rate their orders.</p>
+
+      <div class="step">01 · problem</div>
+      <h4>What keeps marketplace customers happy?</h4>
+      <p>A marketplace depends on repeat business, and repeat business depends on good experiences. I wanted to understand which parts of the operation shape the reviews customers leave, since reviews are what new buyers see first.</p>
+
+      <div class="step">02 · approach</div>
+      <h4>From raw tables to one view of every order.</h4>
+      <p>I built the pipeline in three steps.</p>
+      <div class="flow">
+        <div class="fstep"><span class="code">01</span><b>Model</b><p>Designed a seven-table relational database in Azure SQL.</p></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="code">02</span><b>Combine</b><p>Pulled the tables into Python and joined them into a single order-level fact table.</p></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="code">03</span><b>Analyze</b><p>Studied revenue over time, customer value and segments, and how delivery timing affects reviews.</p></div>
+      </div>
+
+      <div class="step">03 · impact</div>
+      <h4>Delivery reliability shapes satisfaction.</h4>
+      <p>Most orders arrive well ahead of the promised date, about 12 days early on average, and those customers rate their orders highly, between 4.2 and 4.3 stars. Once an order is late, the average review falls to as low as 1.6 stars.</p>
+      <div class="rec">
+        <span class="code">recommendation</span>
+        <p>Shorten padded delivery estimates, and protect the ones that are at risk.</p>
+        <ol class="recl">
+          <li><b>Tighten estimates on reliable routes.</b> Three in four orders arrive at least a week early, and arriving extra early earns no better reviews. Shorter, accurate estimates make listings more competitive at checkout at no cost to satisfaction.</li>
+          <li><b>Flag at-risk orders before they slip.</b> Late orders average 1.6 stars. Identifying them early and notifying customers proactively protects the review.</li>
+          <li><b>Track two numbers together.</b> Measure late-delivery rate alongside average review score, so shorter estimates never come at the cost of more late orders.</li>
+        </ol>
+      </div>
+    </article>
+
+    <section class="tile reveal" style="margin-top:12px">
+      <div class="ttl">How early do orders arrive?</div>
+      <div class="tsub">All 96,476 delivered orders, split into four equal groups by how early they arrived</div>
+      <svg id="catchart" viewBox="0 0 1000 200" aria-label="Delivery spread relative to promised date"></svg>
+      <div class="cap">Three in four orders arrive at least a week before the promised date. Estimates leave far more buffer than most orders need.</div>
+    </section>
+
+    <section class="kpis">
+      <div class="kpi reveal"><b>96K</b><span>delivered orders analyzed, from a real online marketplace</span></div>
+      <div class="kpi reveal"><b>7</b><span>tables in the Azure SQL database I designed</span></div>
+      <div class="kpi reveal"><b>75%</b><span>of orders arrived at least a week before the promised date</span></div>
+      <div class="kpi reveal"><b>2.7★</b><span>gap in reviews between early and late orders</span></div>
+    </section>
+
+    <div class="stackrow">
+      <dl class="spec"><dt>stack</dt><dd>SQL · Azure SQL · Python · pandas · Matplotlib · Seaborn</dd></dl>
+      <div style="display:flex;gap:8px"><a class="pill primary" href="https://github.com/ash-philip/Ecommerce-database-analytics" target="_blank" rel="noopener">View on GitHub ↗</a></div>
+    </div>
+
+    <div class="next" onclick="go('seattle')"><div><small>next · AP-004</small><b>Three questions. Find your neighborhood.</b></div><span class="pill ghost">›</span></div>
+  </div>
+</main>
+
+<!-- ================= SEATTLE CASE ================= -->
+<main id="seattle" class="page">
+  <div class="wrap">
+    <a class="back" href="#/">‹ Catalog</a>
+
+    <header class="phero">
+      <span class="code"><b>AP-004</b> · Seattle Rental Neighborhood Wizard</span>
+      <h1>Three questions. Find your neighborhood.</h1>
+      <p class="dek">A self-serve BI dashboard in Tableau that helps renters new to Seattle find neighborhoods that fit their budget, commute and lifestyle, built entirely from public data.</p>
+      <div class="byline"><span>By <b>Ashwin Philip</b></span><span>2 min read</span><span class="status live" style="background:var(--tile)"><i></i>Live dashboard</span></div>
+    </header>
+
+    <section class="tile wz">
+      <div class="wzhead">
+        <div><div class="ttl">How the wizard works</div><div class="tsub" style="margin-bottom:0">Click through the steps a renter sees</div></div>
+        <div class="seg seg-wz" role="tablist" style="margin:0"><button class="on" data-wz="0">1 · Budget</button><button data-wz="1">2 · Commute</button><button data-wz="2">3 · Vibe</button><button data-wz="3">Results</button></div>
+      </div>
+      <div class="wzread">
+        <div class="num" id="wnum"></div>
+        <div><div class="lbl" id="wlbl"></div><div class="note" id="wnote"></div></div>
+        <div class="log" id="wlog"></div>
+      </div>
+      <div class="browser">
+        <div class="bbar"><span class="dots"><i></i><i></i><i></i></span><span class="url">🔒 public.tableau.com/views/NeighborhoodFinderWizard</span><a class="blink" href="https://public.tableau.com/views/NeighborhoodFinderWizard/Dashboard2" target="_blank" rel="noopener">Open ↗</a></div>
+        <img id="wzimg" src="" alt="Wizard step screenshot">
+      </div>
+    </section>
+
+    <article class="read story">
+      <p class="dropcap">Moving to a new city means choosing a neighborhood before you know any of them. This project turns that choice into a three-step Tableau wizard. It scores all 53 of Seattle's neighborhoods against what a renter tells it, shows the matches on a map, and explains the top three in plain language. At its core it is a business intelligence project: turning scattered public data into one clean model, and designing a dashboard a non-technical user can understand and trust.</p>
+
+      <div class="step">01 · problem</div>
+      <h4>Rental sites don't tell you where to live.</h4>
+      <p>Listing sites filter by price and bedrooms, but they can't tell a newcomer whether a neighborhood fits how they actually live: how long the commute is, whether they can walk to things, how close transit is, or what the area feels like on a weekend. I wanted one tool that weighs all of that together and gives a clear answer.</p>
+
+      <div class="step">02 · approach</div>
+      <h4>Six signals, one match score.</h4>
+      <p>I built the data layer in Python, cleaning Census, OpenStreetMap and transit data and aligning all of it to Seattle's 53 neighborhood boundaries. Every neighborhood was then scored on six dimensions.</p>
+      <div class="dims"><div class="dim"><b>Budget</b><p>Estimated median rent</p><span class="code">Census ACS</span></div><div class="dim"><b>Bedrooms</b><p>Rental units by size</p><span class="code">Census ACS</span></div><div class="dim"><b>Commute</b><p>Typical travel time to work</p><span class="code">Census ACS</span></div><div class="dim"><b>Social energy</b><p>How often residents move in and out</p><span class="code">Census ACS</span></div><div class="dim"><b>Walkability</b><p>Street network and nearby amenities</p><span class="code">OpenStreetMap</span></div><div class="dim"><b>Transit</b><p>Distance to transit stops</p><span class="code">GTFS feeds</span></div></div>
+      <p>The dimensions combine into a single weighted match score from 0 to 100. In Tableau, I used parameters and parameter actions to build the step-by-step flow, so each answer narrows the map before the next question refines it.</p>
+
+      <div class="step">03 · impact</div>
+      <h4>Self-serve BI for non-technical users.</h4>
+      <p>Instead of a table of numbers, a renter gets three named neighborhoods, a score for each, the strongest reason it fits, and the tradeoff to expect. In the example above, a renter with a $2,300 budget for a one-bedroom was matched with Georgetown, the University District and Miller Park.</p>
+      <p>The same principle applies to any business dashboard: guide the user to a decision, rather than handing them a table and expecting them to find it.</p>
+      <div class="rec">
+        <span class="code">key design choice</span>
+        <p>Always give an answer. If a budget is tight, a near-miss tier shows the closest matches instead of an empty map, so every user leaves with options.</p>
+      </div>
+    </article>
+
+    <section class="tile reveal" style="margin-top:12px">
+      <div class="ttl">What a renter's budget is up against</div>
+      <div class="tsub">Estimated median rent in each of Seattle's 53 neighborhoods</div>
+      <div class="legend"><span><i style="background:#c7c7cc"></i>Neighborhood</span><span><i style="background:#af52de"></i>Top 3 matches in the example</span></div>
+      <svg id="rentchart" viewBox="0 0 1000 200" aria-label="Median rent by neighborhood"></svg>
+      <div class="cap">Median rent ranges from about $1,150 to $2,800. Estimated from Census rent bands using grouped-median interpolation.</div>
+    </section>
+
+    <section class="kpis">
+      <div class="kpi reveal"><b>53</b><span>Seattle neighborhoods scored for every renter</span></div>
+      <div class="kpi reveal"><b>6</b><span>dimensions combined into one match score</span></div>
+      <div class="kpi reveal"><b>3</b><span>questions from first click to a ranked shortlist</span></div>
+      <div class="kpi reveal"><b>3</b><span>public data sources: Census, OpenStreetMap and transit feeds</span></div>
+    </section>
+
+    <div class="stackrow">
+      <dl class="spec"><dt>stack</dt><dd>Tableau · parameter actions · Python · pandas · OSMnx · NetworkX · GTFS</dd></dl>
+      <div style="display:flex;gap:8px"><a class="pill primary" href="https://public.tableau.com/views/NeighborhoodFinderWizard/Dashboard2" target="_blank" rel="noopener">Open live dashboard ↗</a><a class="pill ghost" href="https://github.com/ash-philip/Seattle-Rental-Neighborhood-Wizard" target="_blank" rel="noopener">GitHub ›</a></div>
+    </div>
+
+    <div class="next" onclick="go('taskflow')"><div><small>back to the start · AP-001</small><b>Why a 9x lift in upgrades was an illusion.</b></div><span class="pill ghost">›</span></div>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>Designed &amp; built by Ashwin Philip · Seattle, WA</span><span>© 2026</span></div></footer>
+
+<!-- ================= ASK PANEL ================= -->
+<div class="ask-bg" id="askbg"></div>
+<div class="ask" id="ask" role="dialog" aria-modal="true" aria-labelledby="askt">
+  <button class="x" type="button" data-close aria-label="Close">✕</button>
+  <h3 id="askt">Ask me a question</h3>
+  <details class="qa"><summary>Are you open to relocation?</summary><p>Yes. I'm based in Seattle and would prefer to stay here, but I'm open to relocating for the right role.</p></details>
+  <details class="qa"><summary>What kinds of teams or industries interest you?</summary><p>Tech, transportation, e-commerce, health and sports. Anywhere the data shapes real decisions about how people move, buy, play or get care.</p></details>
+  <div class="own" id="own">
+    <span class="code">ask_your_own</span>
+    <form id="askform">
+      <!-- Web3Forms access key (public by design) -->
+      <input type="hidden" name="access_key" value="ab8cb7d6-4020-4745-9355-9d7fc94aba54">
+      <input type="hidden" name="subject" value="New question from your portfolio">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+      <div class="row2"><input name="name" placeholder="Your name" required><input name="email" type="email" placeholder="Your email" required></div>
+      <textarea name="message" placeholder="Your question" required></textarea>
+      <button class="pill primary" type="submit">Send question</button>
+      <div class="msg" id="askmsg">Thank you for your question.</div>
+    </form>
+    <div class="done"><b>Thanks, it's on its way.</b>I'll get back to you by email soon.</div>
+  </div>
+</div>
+
+<script>
+// AP-003 dot plot
+(function(){
+  const d=[["Very early",4.26],["Early",4.33],["On time",4.22],["Slightly late",2.53],["Late",1.65],["Very late",2.76]];
+  const x=v=>100+(v-1)/4*200;
+  let h='<text x="0" y="10" font-size="11" fill="#86868b" font-weight="600" letter-spacing=".5">AVG REVIEW BY DELIVERY TIMING</text>';
+  [1,2,3,4,5].forEach(t=>h+=`<line x1="${x(t)}" y1="22" x2="${x(t)}" y2="152" stroke="#e8e8ed"/><text x="${x(t)}" y="166" font-size="10" fill="#86868b" text-anchor="middle">${t}★</text>`);
+  d.forEach((r,i)=>{const y=32+i*21,late=r[1]<3,c=late?'#ff375f':'#0071e3';
+    h+=`<text x="0" y="${y+4}" font-size="12" fill="#6e6e73">${r[0]}</text><line x1="${x(1)}" y1="${y}" x2="${x(r[1])}" y2="${y}" stroke="${c}" stroke-opacity=".25" stroke-width="2"/><circle cx="${x(r[1])}" cy="${y}" r="6.5" fill="${c}"/><text x="${x(r[1])+12}" y="${y+4}" font-size="11.5" fill="#1d1d1f" font-weight="600">${r[1].toFixed(1)}</text>`});
+  document.getElementById('dots').innerHTML=h;
+})();
+// AP-004 example result
+(function(){
+  const d=[["01","Georgetown","Very walkable",100],["02","University District","Short commute",97],["03","Miller Park","Strong transit",96]];
+  let h='<text x="0" y="10" font-size="11" fill="#86868b" font-weight="600" letter-spacing=".5">EXAMPLE RESULT · $2,300, 1-BED</text>';
+  d.forEach((r,i)=>{const y=24+i*42;h+=`<rect x="0" y="${y}" width="360" height="34" rx="10" fill="#fff"/><text x="14" y="${y+22}" font-size="11" fill="#86868b" font-family="JetBrains Mono,monospace">${r[0]}</text><text x="42" y="${y+22}" font-size="13.5" font-weight="600" fill="#1d1d1f">${r[1]}</text><text x="300" y="${y+22}" font-size="11.5" fill="#6e6e73" text-anchor="end">${r[2]}</text><text x="346" y="${y+22}" font-size="14" font-weight="700" fill="#af52de" text-anchor="end">${r[3]}</text>`});
+  document.getElementById('dims').innerHTML=h;
+})();
+
+// router
+function route(){
+  const id=(location.hash.replace('#/','')||'home'); const t=document.getElementById(id)?id:'home';
+  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('on',p.id===t));
+  if(t!=='home') scrollTo(0,0); observe();
+}
+addEventListener('hashchange',route);
+function go(id){
+  const t=document.getElementById(id)&&document.getElementById(id).classList.contains('page')?id:'home';
+  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('on',p.id===t));
+  scrollTo(0,0); observe();
+  try{history.replaceState(null,'',t==='home'?'#/':'#/'+t)}catch(_){}
+}
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href^="#/"]'); if(!a||a.hasAttribute('data-scroll')) return;
+  e.preventDefault(); const id=a.getAttribute('href').slice(2); if(id) go(id); else if(!document.getElementById('home').classList.contains('on')) go('home');
+});
+document.querySelectorAll('[data-go]').forEach(c=>c.addEventListener('click',e=>{if(e.target.closest('a'))return;const g=c.dataset.go;if(g!=='soon')go(g)}));
+document.querySelectorAll('[data-scroll]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();if(!document.getElementById('home').classList.contains('on'))go('home');setTimeout(()=>document.getElementById(a.dataset.scroll).scrollIntoView({behavior:'smooth'}),30)}));
+let io;function observe(){if(io)io.disconnect();io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.page.on .reveal:not(.in)').forEach(el=>io.observe(el))}
+
+// nudge toggle
+const views={
+  naive:{a:6.2,b:58.1,l1:"Didn't see the nudge<br><small>all other users</small>",num:"+52 pts",col:"#0071e3",lbl:"Apparent lift.",note:"The nudge was shown only to users who crossed a heavy-usage threshold, a group that already upgrades at high rates. Comparing them with all other users overstates its effect."},
+  fair:{a:58.5,b:58.1,l1:"Equally heavy users<br><small>no nudge</small>",num:"−0.4 pts",col:"#ff375f",lbl:"Real effect. Statistically zero.",note:"When nudged users are compared with users of the same engagement level, upgrade rates are virtually identical (58.1% vs 58.5%). The lift came from who received the nudge, not from the nudge itself."}
+};
+function setView(k){const v=views[k];
+  document.getElementById('f1').style.height=(v.a/65*100)+'%';
+  document.getElementById('f2').style.height=(v.b/65*100)+'%';
+  document.getElementById('v1').textContent=v.a+'%';document.getElementById('v2').textContent=v.b+'%';
+  document.getElementById('l1').innerHTML=v.l1;
+  const n=document.getElementById('cnum');n.textContent=v.num;n.style.color=v.col;
+  document.getElementById('clbl').textContent=v.lbl;document.getElementById('cnote').textContent=v.note;
+  document.querySelectorAll('.seg [data-view]').forEach(b=>b.classList.toggle('on',b.dataset.view===k));
+}
+document.querySelectorAll('.seg [data-view]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
+setView('naive');route();
+
+
+// transit scenarios
+(function(){
+  const SC=[
+    {n:"Base",fr:87,rd:0,c:"#c7c7cc",lbl:"Cost recovery with current fares.",note:"Fares cover 87% of operating costs over the next 12 months. This is the line every other scenario is measured against.",log:"fare +0% · costs +0%<br>riders: 8,199 / month"},
+    {n:"Fare +5%",fr:91,rd:-1,c:"#34c759",lbl:"Cost recovery with a 5% fare increase.",note:"Most of the financial gain for very little rider loss. The most balanced option of the four.",log:"fare +5% · costs +0%<br>riders: −1% vs base"},
+    {n:"Fare +10%",fr:93,rd:-3,c:"#34c759",lbl:"Cost recovery with a 10% fare increase.",note:"The strongest financial result, but also the largest loss of riders.",log:"fare +10% · costs +0%<br>riders: −3% vs base"},
+    {n:"Fare +5%, cost +8%",fr:84,rd:-1,c:"#ff9f0a",lbl:"Cost recovery if costs rise 8% as well.",note:"Rising costs erase the fare gain entirely, leaving recovery below the base case.",log:"fare +5% · costs +8%<br>riders: −1% vs base"}
+  ];
+  const svg=document.getElementById('scchart'); if(!svg) return;
+  const y=v=>210-(v-70)/30*190, x0=40, bw=90, gap=30;
+  function draw(k){
+    let h='';
+    [70,80,90,100].forEach(t=>h+=`<line x1="${x0}" y1="${y(t)}" x2="520" y2="${y(t)}" stroke="#e8e8ed"/><text x="${x0-8}" y="${y(t)+4}" font-size="10" fill="#86868b" text-anchor="end">${t}%</text>`);
+    h+=`<line x1="${x0}" y1="${y(87)}" x2="520" y2="${y(87)}" stroke="#86868b" stroke-dasharray="4 4"/>`;
+    SC.forEach((s,i)=>{const X=x0+20+i*(bw+gap),on=i===k;
+      h+=`<rect x="${X}" y="${y(s.fr)}" width="${bw}" height="${210-y(s.fr)}" rx="10" fill="${on?s.c:'#e8e8ed'}" style="transition:fill .3s"/>`+
+         `<text x="${X+bw/2}" y="${y(s.fr)-10}" font-size="15" font-weight="700" text-anchor="middle" fill="${on?'#1d1d1f':'#86868b'}">${s.fr}%</text>`+
+         `<text x="${X+bw/2}" y="232" font-size="11.5" text-anchor="middle" fill="${on?'#1d1d1f':'#6e6e73'}" font-weight="${on?600:400}">${s.n}</text>`});
+    svg.innerHTML=h;
+    const s=SC[k],n=document.getElementById('snum');
+    n.textContent=s.fr+'%'; n.style.color=k===3?'#ff9f0a':(k===0?'#1d1d1f':'#1f8a3c');
+    document.getElementById('slbl').textContent=s.lbl;
+    document.getElementById('snote').textContent=s.note;
+    document.getElementById('slog').innerHTML=s.log;
+    document.querySelectorAll('.seg-sc button').forEach(b=>b.classList.toggle('on',+b.dataset.sc===k));
+  }
+  document.querySelectorAll('.seg-sc button').forEach(b=>b.addEventListener('click',()=>draw(+b.dataset.sc)));
+  draw(0);
+})();
+// transit revenue vs cost
+(function(){
+  const D=[[2020,224487,402055],[2021,245408,409324],[2022,305156,412142],[2023,359078,459864],[2024,382987,445896],[2025,397560,462090],[2026,391893,474611],['2027F',411845,471112]];
+  const svg=document.getElementById('ridechart'); if(!svg) return;
+  const Y=v=>260-v/500000*230, gw=960/D.length, bw=38;
+  let h='';
+  [0,100000,200000,300000,400000,500000].forEach(t=>h+=`<line x1="40" y1="${Y(t)}" x2="1000" y2="${Y(t)}" stroke="#e8e8ed"/><text x="34" y="${Y(t)+4}" font-size="11" fill="#86868b" text-anchor="end">${t?'$'+t/1000+'k':'0'}</text>`);
+  D.forEach((d,i)=>{const cx=40+gw*i+gw/2, f=String(d[0]).includes('F'), op=f?.45:1;
+    h+=`<rect x="${cx-bw-2}" y="${Y(d[2])}" width="${bw}" height="${260-Y(d[2])}" rx="6" fill="#c7c7cc" opacity="${op}"/>`;
+    h+=`<rect x="${cx+2}" y="${Y(d[1])}" width="${bw}" height="${260-Y(d[1])}" rx="6" fill="#0071e3" opacity="${op}"/>`;
+    h+=`<text x="${cx}" y="${Y(d[2])-10}" font-size="12" font-weight="700" text-anchor="middle" fill="#1d1d1f">${Math.round(d[1]/d[2]*100)}%</text>`;
+    h+=`<text x="${cx}" y="282" font-size="12" text-anchor="middle" fill="${f?'#0071e3':'#6e6e73'}" font-weight="${f?600:400}">${f?'2027 forecast':d[0]}</text>`;});
+  svg.innerHTML=h;
+})();
+
+
+// ecommerce reviews chart
+(function(){
+  const B=[["Very early","30+ days early",4.26],["Early","10 to 30 days early",4.33],["On time","0 to 10 days early",4.22],["Slightly late","up to 10 days late",2.53],["Late","10 to 50 days late",1.65],["Very late","50+ days late",2.76]];
+  const svg=document.getElementById('ecchart'); if(!svg) return;
+  const X=v=>130+(v-1)/4*370;
+  function draw(k){
+    let h='';
+    [1,2,3,4,5].forEach(t=>h+=`<line x1="${X(t)}" y1="10" x2="${X(t)}" y2="228" stroke="#e8e8ed"/><text x="${X(t)}" y="248" font-size="11" fill="#86868b" text-anchor="middle">${t}★</text>`);
+    if(k==='avg'){
+      const D=d=>60+(d+20)/24*420;
+      h='';
+      h+=`<line x1="${D(-20)}" y1="140" x2="${D(4)}" y2="140" stroke="#d2d2d7" stroke-width="4" stroke-linecap="round"/>`;
+      h+=`<line x1="${D(-12)}" y1="140" x2="${D(0)}" y2="140" stroke="#0071e3" stroke-width="4"/>`;
+      h+=`<circle cx="${D(-12)}" cy="140" r="12" fill="#0071e3"/><text x="${D(-12)}" y="182" font-size="13" text-anchor="middle" font-weight="600" fill="#1d1d1f">Delivered</text><text x="${D(-12)}" y="199" font-size="11" text-anchor="middle" fill="#86868b">on average</text>`;
+      h+=`<circle cx="${D(0)}" cy="140" r="12" fill="#fff" stroke="#1d1d1f" stroke-width="3"/><text x="${D(0)}" y="182" font-size="13" text-anchor="middle" font-weight="600" fill="#1d1d1f">Promised</text><text x="${D(0)}" y="199" font-size="11" text-anchor="middle" fill="#86868b">delivery date</text>`;
+      h+=`<path d="M${D(-12)},96 L${D(-12)},88 L${D(0)},88 L${D(0)},96" fill="none" stroke="#0071e3" stroke-width="1.5"/><text x="${D(-6)}" y="76" font-size="15" text-anchor="middle" font-weight="700" fill="#0071e3">12 days early</text>`;
+      svg.innerHTML=h;
+    } else {
+      B.forEach((b,i)=>{const y=22+i*36,late=b[2]<3,c=late?'#ff375f':'#0071e3';
+        h+=`<text x="0" y="${y+2}" font-size="13" fill="#1d1d1f" font-weight="${late?600:400}">${b[0]}</text><text x="0" y="${y+17}" font-size="10.5" fill="#86868b">${b[1]}</text>`+
+           `<line x1="${X(1)}" y1="${y+6}" x2="${X(b[2])}" y2="${y+6}" stroke="${c}" stroke-opacity=".25" stroke-width="3"/><circle cx="${X(b[2])}" cy="${y+6}" r="8" fill="${c}"/><text x="${X(b[2])+15}" y="${y+11}" font-size="13" font-weight="700" fill="#1d1d1f">${b[2].toFixed(1)}</text>`});
+    }
+    svg.innerHTML=h;
+    const V={avg:{n:"12 days",c:"#0071e3",l:"Average delivery, ahead of the promised date.",t:"On average the marketplace looks reliable: orders arrive well before the estimate. But the average hides what happens to customers when a delivery slips.",g:"96,476 delivered orders<br>average: 12 days early"},
+             split:{n:"−2.7★",c:"#ff375f",l:"Review drop when an order arrives late.",t:"Orders that arrive early or on time average 4.2 to 4.3 stars. Orders 10 to 50 days late average 1.6. Delivery timing is one of the clearest drivers of satisfaction.",g:"early: 4.3★ · late: 1.6★<br>6 delivery-timing groups"}}[k];
+    const n=document.getElementById('enum');n.textContent=V.n;n.style.color=V.c;
+    document.getElementById('elbl').textContent=V.l;document.getElementById('enote').textContent=V.t;document.getElementById('elog').innerHTML=V.g;
+    document.querySelectorAll('.seg-ec button').forEach(b=>b.classList.toggle('on',b.dataset.ec===k));
+    document.getElementById('etsub').textContent=k==='avg'?'The average order, compared with its promised delivery date':'Average review score, by when the order arrived';
+  }
+  document.querySelectorAll('.seg-ec button').forEach(b=>b.addEventListener('click',()=>draw(b.dataset.ec)));
+  draw('avg');
+})();
+// ecommerce delivery spread
+(function(){
+  const svg=document.getElementById('catchart'); if(!svg) return;
+  const G=[["17+ days early","#0071e3",1],["12 to 17 days early","#0071e3",.75],["7 to 12 days early","#0071e3",.5],["Under 7 days early, on time or late","#c7c7cc",1]];
+  let h='',x=0;
+  G.forEach((g,i)=>{const w=1000/4;
+    h+=`<rect x="${x+(i?3:0)}" y="40" width="${w-(i?3:0)-(i<3?3:0)}" height="64" rx="12" fill="${g[1]}" opacity="${g[2]}"/>`;
+    h+=`<text x="${x+w/2}" y="80" font-size="20" font-weight="700" text-anchor="middle" fill="${i<3?'#fff':'#1d1d1f'}">25%</text>`;
+    h+=`<text x="${x+w/2}" y="132" font-size="13.5" font-weight="600" text-anchor="middle" fill="#1d1d1f">${g[0].split(', ')[0]}</text>`;
+    if(i===3) h+=`<text x="${x+w/2}" y="150" font-size="12" text-anchor="middle" fill="#6e6e73">on time or late</text>`;
+    x+=w;});
+  h+=`<path d="M3,178 L3,186 L747,186 L747,178" fill="none" stroke="#0071e3" stroke-width="1.5"/><text x="375" y="176" font-size="13" text-anchor="middle" font-weight="600" fill="#0071e3">75% arrive at least a week early</text>`;
+  svg.innerHTML=h;
+})();
+
+
+// seattle wizard gallery
+(function(){
+  const W=[
+    {img:"assets/wizard-1-budget.jpg",n:"01",l:"Budget and space.",t:"The renter sets a maximum rent and bedroom count, and every neighborhood is scored on median rent and rental units of that size.",g:"source: Census ACS<br>scores: budget · bedrooms"},
+    {img:"assets/wizard-2-commute.jpg",n:"02",l:"Commute and transit.",t:"The renter says how much commute time and transit access matter, and the map updates as neighborhoods that don't fit fall away.",g:"source: Census ACS · GTFS<br>scores: commute · transit"},
+    {img:"assets/wizard-3-vibe.jpg",n:"03",l:"Saturday vibe.",t:"The renter picks the energy they want, from quiet and leafy to buzzy and social, which refines the ranking.",g:"source: Census ACS · OpenStreetMap<br>scores: social energy · walkability"},
+    {img:"assets/wizard-4-results.jpg",n:"Top 3",l:"A ranked shortlist with reasons.",t:"The three best matches, each with a 0 to 100 score, its strongest fit and its biggest tradeoff.",g:"example: Georgetown 100<br>University District 97 · Miller Park 96"}
+  ];
+  const im=document.getElementById('wzimg'); if(!im) return;
+  function show(k){const w=W[k];im.src=w.img;
+    const n=document.getElementById('wnum');n.textContent=w.n;n.style.color=k===3?'#af52de':'#0071e3';
+    document.getElementById('wlbl').textContent=w.l;document.getElementById('wnote').textContent=w.t;document.getElementById('wlog').innerHTML=w.g;
+    document.querySelectorAll('.seg-wz button').forEach(b=>b.classList.toggle('on',+b.dataset.wz===k));}
+  document.querySelectorAll('.seg-wz button').forEach(b=>b.addEventListener('click',()=>show(+b.dataset.wz)));
+  show(0);
+})();
+// seattle rent strip
+(function(){
+  const R=[["Pioneer Square/International District", 1150], ["South Beacon Hill/NewHolly", 1296], ["Highland Park", 1491], ["Rainier Beach", 1615], ["Georgetown", 1616], ["Broadview/Bitter Lake", 1692], ["High Point", 1701], ["University District", 1729], ["North Beacon Hill/Jefferson Park", 1738], ["Licton Springs", 1777], ["Cedar Park/Meadowbrook", 1777], ["Mt. Baker/North Rainier", 1780], ["South Park", 1795], ["Columbia City", 1834], ["North Capitol Hill", 1846], ["First Hill", 1910], ["Olympic Hills/Victory Heights", 1934], ["Fauntleroy/Seaview", 1936], ["Seward Park", 1943], ["Judkins Park", 1947], ["Wedgwood/View Ridge", 1979], ["Capitol Hill", 1980], ["Alki/Admiral", 1981], ["Central Area/Squire Park", 1991], ["Northgate/Maple Leaf", 1993], ["Wallingford", 2009], ["Haller Lake", 2012], ["Roxhill/Westwood", 2013], ["West Seattle Junction/Genesee Hill", 2016], ["Beacon Hill", 2040], ["Greenwood/Phinney Ridge", 2058], ["Miller Park", 2059], ["Montlake/Portage Bay", 2069], ["North Beach/Blue Ridge", 2077], ["Laurelhurst/Sand Point", 2082], ["North Delridge", 2085], ["Fremont", 2101], ["Whittier Heights", 2115], ["Ravenna/Bryant", 2118], ["Green Lake", 2127], ["Madrona/Leschi", 2161], ["Queen Anne", 2187], ["Interbay", 2227], ["Duwamish/SODO", 2245], ["Ballard", 2256], ["Belltown", 2293], ["Sunset Hill/Loyal Heights", 2293], ["Madison Park", 2455], ["Riverview", 2465], ["Cascade/Eastlake", 2481], ["Downtown Commercial Core", 2503], ["Arbor Heights", 2509], ["Magnolia", 2800]], top={"Georgetown":1,"University District":1,"Miller Park":1};
+  const svg=document.getElementById('rentchart'); if(!svg) return;
+  const X=v=>40+(v-1000)/2000*920;
+  let h='';
+  [1000,1500,2000,2500,3000].forEach(t=>h+=`<line x1="${X(t)}" y1="40" x2="${X(t)}" y2="150" stroke="#e8e8ed"/><text x="${X(t)}" y="172" font-size="12" fill="#86868b" text-anchor="middle">$${t.toLocaleString()}</text>`);
+  h+=`<line x1="${X(2300)}" y1="30" x2="${X(2300)}" y2="150" stroke="#1d1d1f" stroke-width="1.5" stroke-dasharray="4 4"/><text x="${X(2300)}" y="22" font-size="12" text-anchor="middle" font-weight="600" fill="#1d1d1f">$2,300 budget</text>`;
+  const seen={};
+  R.forEach(([n,r])=>{const b=Math.round(r/40);seen[b]=(seen[b]||0)+1;const y=120-(seen[b]-1)*14;
+    h+=`<circle cx="${X(r)}" cy="${y}" r="${top[n]?7:5.5}" fill="${top[n]?'#af52de':'#c7c7cc'}"><title>${n}: $${r.toLocaleString()}</title></circle>`;});
+  h+=`<text x="${X(1150)}" y="146" font-size="11" fill="#6e6e73" text-anchor="start">Pioneer Square</text>`;
+  h+=`<text x="${X(2800)}" y="146" font-size="11" fill="#6e6e73" text-anchor="end">Magnolia</text>`;
+  svg.innerHTML=h;
+})();
+
+
+// transit power bi gallery
+(function(){
+  const URL="https://app.powerbi.com/view?r=eyJrIjoiNzhhN2UzYzUtZDg3YS00ODk0LTkyZTAtMGZiYzkwNzE3N2RlIiwidCI6ImY2YjZkZDViLWYwMmYtNDQxYS05OWEwLTE2MmFjNTA2MGJkMiIsImMiOjZ9", IM=["assets/powerbi-1-overview.jpg", "assets/powerbi-2-diagnostics.jpg", "assets/powerbi-3-forecast.jpg", "assets/powerbi-4-backtest.jpg", "assets/powerbi-5-scenarios.jpg"];
+  const P=[
+    {n:"01",l:"Program health at a glance.",t:"Five KPIs and three trends, filterable by year and by operating period.",g:"551,895 boardings · $3.07M cost<br>75.2% cost recovery overall"},
+    {n:"02",l:"Why cost recovery moved.",t:"Compares the pre-disruption, disruption, recovery and stabilized periods, and breaks down the cost drivers.",g:"recovery: 98.6% → 41.0%<br>→ 71.0% → 84.8%"},
+    {n:"03",l:"24 months ahead.",t:"Ridership, revenue and cost forecast through 2028, with uncertainty bands around ridership.",g:"forecast recovery<br>2027: 87.4% · 2028: 95.0%"},
+    {n:"04",l:"Proof the forecast works.",t:"Trained on data through 2025 and tested on 2026, the model beat a seasonal baseline by 21.7% on average error.",g:"average error 1.6%<br>12 of 12 months inside the 95% band"},
+    {n:"05",l:"Test any fare decision.",t:"Sliders for fare change, rider response, cost pressure and a recovery target, with the fare increase needed to reach it.",g:"base case: +5% fare<br>needed to reach 90%"}
+  ];
+  const im=document.getElementById('pbimg'); if(!im) return;
+  let live=false;
+  function show(k){const p=P[k];
+    if(live){ restore(); }
+    im.src=IM[k];
+    document.getElementById('pnum').textContent=p.n;document.getElementById('plbl').textContent=p.l;document.getElementById('pnote').textContent=p.t;document.getElementById('plog').innerHTML=p.g;
+    document.querySelectorAll('.seg-pb button').forEach(b=>b.classList.toggle('on',+b.dataset.pb===k));}
+  const stage=document.querySelector('.pbistage'), btn=document.getElementById('pblive');
+  function restore(){stage.innerHTML='';stage.appendChild(im);live=false;btn.textContent='Interact here';}
+  btn.addEventListener('click',()=>{
+    if(live){restore();return;}
+    stage.innerHTML=`<iframe title="Transit Rideshare Performance, Power BI" src="${URL}" allowfullscreen loading="lazy"></iframe>`;
+    live=true;btn.textContent='Show screenshots';
+    document.getElementById('pnum').textContent='Live';document.getElementById('plbl').textContent='The full interactive report.';
+    document.getElementById('pnote').textContent='Use the page tabs inside the report, or try the Scenario Planner sliders.';
+    document.getElementById('plog').innerHTML='published with<br>Power BI Publish to web';
+  });
+  document.querySelectorAll('.seg-pb button').forEach(b=>b.addEventListener('click',()=>show(+b.dataset.pb)));
+  show(0);
+})();
+
+
+// mobile menu
+(function(){
+  const nav=document.querySelector('nav'),btn=nav.querySelector('.menu-btn');
+  btn.addEventListener('click',()=>{const o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.setAttribute('aria-label',o?'Close menu':'Open menu');});
+  nav.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}));
+})();
+// ask panel
+const ask=document.getElementById('ask'),askbg=document.getElementById('askbg');
+function openAsk(){ask.classList.add('on');askbg.classList.add('on');}
+function closeAsk(){ask.classList.remove('on');askbg.classList.remove('on');}
+document.querySelectorAll('[data-ask]').forEach(b=>b.addEventListener('click',openAsk));
+askbg.addEventListener('click',closeAsk);
+ask.querySelector('[data-close]').addEventListener('click',closeAsk);
+addEventListener('keydown',e=>{if(e.key==='Escape')closeAsk()});
+document.getElementById('askform').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const f=e.target,msg=document.getElementById('askmsg'),btn=f.querySelector('[type=submit]');
+  btn.disabled=true;btn.textContent='Sending…';
+  try{
+    const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    const j=await r.json();
+    if(j.success){document.getElementById('own').classList.add('sent');f.reset();}
+    else throw 0;
+  }catch(_){msg.innerHTML='Something went wrong. You can also email me at <a href="mailto:ashwin.abraham.p@gmail.com" style="color:var(--accent)">ashwin.abraham.p@gmail.com</a>.';}
+  btn.disabled=false;btn.textContent='Send question';
+});
+</script>
 </body>
 </html>
